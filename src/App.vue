@@ -4,14 +4,23 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div> -->
-    <router-view/>
+    <home/>
   </div>
 </template>
 
+<script>
+import Home from '@/views/Home.vue'
+export default {
+  components: {
+    Home
+  }
+}
+</script>
 <style lang="scss">
 
 @import './assets/css/start.css';
 @import './assets/css/app.css';
+
 
 #app {
   // font-family: Avenir, Helvetica, Arial, sans-serif;

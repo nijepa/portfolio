@@ -86,7 +86,7 @@ export default {
               console.log("scrolling up")
           } else if (event.deltaY > 0) {
               console.log("scrolling down")
-              this.handleStart
+              // this.handleStart
           }
       })
     }
