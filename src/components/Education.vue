@@ -7,9 +7,9 @@
       <p class="course__text">{{course.desc}}</p>
     </div> -->
     <div class="edu">
-      <h1 class="course">The Odin Project</h1>
+      <a href="https://www.theodinproject.com" target="_blank" class="course"><h1>The Odin Project</h1></a>
       <div class="course__white">
-<img style="display: block;" class="course__img odin" :src="require('../assets/images/odin-logo.svg')" alt="Yummy Taco" >
+        <img class="course__img odin" :src="require('../assets/images/odin-logo.svg')" alt="Yummy Taco" >
       </div>
       
       
@@ -24,10 +24,10 @@
     </div>
 
     <div class="edu1">
-      <h1 class="course">Udemy</h1>
+      <a href="https://www.udemy.com" target="_blank" class="course"><h1>Udemy</h1></a>
       
       <div class="course__text">
-        <p class=""><a href="https://www.udemy.com"> Udemy </a> is global marketplace for learning and instruction.</p>
+        <p class=""><a href="https://www.udemy.com" target="_blank"> Udemy </a> is global marketplace for learning and instruction.</p>
         <p>From the many courses Udemy offers, i took <a href="https://www.udemy.com/course/laravel-api-development-vue-js-spa-from-scratch/learn/lecture/15413190?start=0#overview">Laravel API Development & Vue JS SPA from Scratch</a> .</p>
         <p>It was learning how to develop the required API to power a simple address book project named <a href="https://github.com/nijepa/jot"> Jot</a>.</p>
         <p><a href="https://github.com/nijepa/jot">Jot</a> is a SPA written in Vue JS using the TailwindCSS front-end framework.</p>
@@ -38,11 +38,11 @@
     </div>
 
     <div class="edu">
-      <h1 class="course">freeCodeCamp</h1>
+      <a href="https://www.freecodecamp.org/" target="_blank" class="course"><h1>freeCodeCamp</h1></a>
       <img style="display: block;" class="course__img" :src="require('../assets/images/freecodecamp-logo.svg')" alt="Yummy Taco" >
       
       <div class="course__text">
-        <p class=""><a href="https://www.freecodecamp.org/"> freeCodeCamp </a> helps you learn to code by building projects.</p>
+        <p class=""><a href="https://www.freecodecamp.org/" target="_blank"> freeCodeCamp </a> helps you learn to code by building projects.</p>
         <p>I learn to code by completing coding challenges and building projects.</p>
         <p>Also I earned couple of verified certifications along the way, <a href="https://www.freecodecamp.org/certification/fcce8b7e137-31ae-4bb5-915f-a76095b3ad2d/responsive-web-design"> Responsive Web Design </a> and JavaScript Algorithms and Data Structures.</p>
         <p>Each certification takes around 300 hours of dedicated learning.</p>
@@ -55,7 +55,9 @@
 
 <script>
 export default {
+
   name: 'Education',
+
   data() {
     return {
       title: '<[{ EDUCATION }]/>',
@@ -97,19 +99,20 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
   .edu {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
     justify-items: center;
     align-items: center;
     grid-template-areas: "title title"
                           "desc image";
-    /* margin: 3rem; */
-    /* border-top: 2px solid var(--black); */
     margin-top: 20px;
     background-color: rgba(255, 255, 255, 0.9);
   }
+
   .edu1 {
     display: grid;
     grid-template-columns: auto auto;
@@ -117,43 +120,52 @@ export default {
     align-items: center;
     grid-template-areas: "title title"
                           "image desc";
-    /* margin: 3rem; */
-    /* border-top: 2px solid var(--black); */
     margin-top: 20px;
     background-color: rgba(255, 255, 255, 0.9);
   }
+
   .course {
     text-decoration: underline;
     grid-area: title;
     margin: 20px 0;
   }
+
   .course__img {
     grid-area: image;
     height: 70px;
-    
+    align-self: center;
   }
   .course__text {
     grid-area: desc;
     padding: 10px;
     background-color: rgba(255, 255, 255, 0.5);
+    
   }
+
   .course__white {
-background-color: rgba(255, 255, 255, 0.9);
+    grid-area: image;
+    background-color: rgba(255, 255, 255, 0.9);
   }
+
   .odin {
     height: 150px;
   }
+
+  #about {
+    margin: 30px;
+  }
+
   @media (max-width: 700px) {
-  .edu, .edu1 {
-    grid-template-areas: 
-    "title title"
-    "image image"
-    "desc desc"
+    .edu, .edu1 {
+      grid-template-areas: 
+      "title title"
+      "image image"
+      "desc desc"
+    }
+    .course__img {
+      height: 40px;
+      width: auto;
+    }
   }
-  .course__img {
-    height: 40px;
-    width: auto;
-  }
-}
 
 </style>

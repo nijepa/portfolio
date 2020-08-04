@@ -27,7 +27,26 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   // text-align: center;
-  color: #2c3e50;
+  color: #203b55;
+   /* unvisited link */
+    a:link {
+      color: rgb(3, 96, 182);
+    }
+
+    /* visited link */
+    a:visited {
+      color: var(--blue);
+    }
+
+    /* mouse over link */
+    a:hover {
+      color: rgb(165, 38, 7)
+    }
+
+    /* selected link */
+    a:active {
+      color: var(--yellow);
+    }
 }
 
 #nav {
@@ -35,7 +54,7 @@ export default {
 
   a {
     font-weight: bold;
-    color: #2c3e50;
+    color: var(--blue);
 
     &.router-link-exact-active {
       color: #5a9c7f;
@@ -44,10 +63,10 @@ export default {
 }
 
 .slide-fade-enter-active {
-  transition: all 1.3s ease;
+  transition: all 1.7s ease;
 }
 .slide-fade-leave-active {
-  transition: all 1.8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
 .slide-fade-enter, .slide-fade-leave-to
 /* .slide-fade-leave-active below version 2.1.8 */ {

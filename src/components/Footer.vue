@@ -32,25 +32,92 @@
 </template>
 
 <script>
-export default {
-  name: 'Footer',
-  data() {
-    return {
-      atCopy: ''
+  export default {
+    
+    name: 'Footer',
+
+    data() {
+      return {
+        atCopy: ''
+      }
+    },
+
+    mounted() {
+      let n = new Date();
+      let y = n.getFullYear(); 
+      // let m = n.getMonth() + 1;
+      // let d = n.getDate();
+      // document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
+      // document.getElementById("date").innerHTML = "&copy; " + y + " Nikola"
+      this.atCopy = "&copy; " + y + " Nikola"
     }
-  },
-  mounted() {
-    let n = new Date();
-    let y = n.getFullYear(); 
-    // let m = n.getMonth() + 1;
-    // let d = n.getDate();
-    // document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
-    // document.getElementById("date").innerHTML = "&copy; " + y + " Nikola"
-    this.atCopy = "&copy; " + y + " Nikola"
   }
-}
 </script>
 
 <style>
+  /* FOOTER */
 
+  footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-self: stretch;
+    justify-items: center;
+    margin-top: 50px;
+    padding: 10px 0;
+    width: 100%;
+    bottom: 0;
+  }
+
+  footer svg {
+    cursor: pointer;
+    width: 70px;
+    justify-self: center;
+    transition: ease-in-out .7s all;
+  }
+
+  .in {
+    justify-self: right;
+  }
+
+  footer svg:hover {
+    fill: var(--orange); 
+    transform: scale(.9);
+  }
+
+  .ma {
+    justify-self: left;
+  }
+
+  h2 {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-gap: 20px;
+    align-items: center;
+    margin-top: 30px;
+    fill: var(--black);
+    font-size: 16px;
+    color: var(--orange);
+  }
+
+  h2:before, h2:after {
+    display: block;
+    content: '';
+    height: 10px;
+    background: linear-gradient(var(--direction, left), var(--yellow), transparent); 
+    -webkit-box-shadow: 9px -9px 9px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: 9px -9px 9px -7px rgba(0,0,0,0.75);
+    box-shadow: 9px -9px 9px -7px rgba(0,0,0,0.75);
+  }
+
+  h2:after {
+    --direction: right;
+    -webkit-box-shadow: 9px -9px 9px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: 9px -9px 9px -7px rgba(0,0,0,0.75);
+    box-shadow: 9px -9px 9px -7px rgba(0,0,0,0.75);
+  }
+
+  #date {
+    text-align: center;
+  }
 </style>

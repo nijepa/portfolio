@@ -30,10 +30,13 @@ import Touch from '@/components/Contact.vue'
 import Footer from '@/components/Footer.vue'
 
 export default {
+
   name: 'Home',
+
   components: {
     Start, Navigation, AboutMe, Projects, Touch, Footer, Education
   },
+
   data() {
     return {
       started: false,
@@ -43,11 +46,13 @@ export default {
       contact: false
     }
   },
+
   methods: {
     handleStart() {
       this.started = true;
       this.about = true;
     },
+
     handleNav(event) {
       console.log(event.target.id)
       switch (event.target.id) {
@@ -72,14 +77,15 @@ export default {
           this.contact = true;
           break;
       }
-      // this.started = true;
     },
+
     clearViews() {
       this.about = false;
       this.project = false;
       this.education = false;
       this.contact = false;
     },
+    
     handleWheel() {
       window.addEventListener('wheel', function(event) {
           if (event.deltaY < 0) {

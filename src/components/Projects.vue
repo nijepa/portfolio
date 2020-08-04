@@ -44,113 +44,116 @@
 </template>
 
 <script>
-export default {
-  name: 'Projects',
-  data() {
-    return {
-      title: '< PROJECTS />',
-      projectsData : 
-        [{name: 'ToDo list', 
-          title: 'ToDo list made with Vue', 
-          image: 'todolistvue',
-          desc: 'Chose a photo from 3 of them and try to find hidden character between many of characters.',
-          features: ['A photo tagging app',
-                      'Photos are stored on Firebase storage, database',
-                      'Game data mapping positions are stored in Firebase database',
-                      'Firebase also hold players scores'],
-          online: 'https://nijepa.github.io/todo-list-vue/',
-          source: 'https://github.com/nijepa/todo-list-vue',
-          tools: ['vue', 'js', 'css3']
-        },
-        {name: 'Weather app', 
-          title: 'Weather app made with Vue', 
-          image: 'weatherapp',
-          desc: 'Enter a location and it will fetch the weather data from a weather API (openweathermap.org) and a photo of (if availabile) for found location from another API (teleport.org).',
-          features: ['Fetch new data for a new location without reloading',
-                      'Error handling for different HTTP status codes',
-                      'Fetch location photo from another API',
-                      'Responsive design'],
-          online: 'https://nijepa.github.io/weather-app/',
-          source: 'https://github.com/nijepa/weather-app',
-          tools: ['vue', 'js', 'css3']
-        },
-        {name: "Where's Waldo game", 
-          title: "Where's Waldo made with Vue", 
-          image: 'whereswaldo',
-          desc: 'Chose a photo from 3 of them and try to find hidden character between many of characters.',
-          features: ['A photo tagging app',
-                      'Photos are stored on Firebase storage',
-                      'Game data mapping positions are stored in Firebase database',
-                      'Firebase also hold players scores'],
-          online: 'https://nijepa.github.io/whereswaldo/',
-          source: 'https://github.com/nijepa/whereswaldo',
-          tools: ['vue', 'js', 'css3', 'firebase']
-        },
-        {name: 'Laravel-VUE', 
-          title: 'Bussiness app made with VUE and Laravel', 
-          image: 'laravel-vue',
-          desc: 'App for managing meetings and projects, and presentation site with CMS.',
-          features: ['SPA app on top of API',
-                      'Built in messenger, todo list',
-                      'Authentication control and user menagment',
-                      'Responsive design'],
-          online: '',
-          source: 'https://github.com/nijepa/laravel-vue',
-          tools: ['vue', 'js', 'css3', 'sass', 'laravel', 'mysql']
-        },
-        {name: 'Battleship game', 
-          title: 'project-battleship app made with Vue', 
-          image: 'battleship',
-          desc: 'Enter a location and it will fetch the weather data from a weather API (openweathermap.org) and display an animated representation of the current weather along with values like temperature, humidity and state of the sky.',
-          features: ['Fetch new data for a new location without reloading',
-                      'Error handling for different HTTP status codes',
-                      'Keyframe based sky elements animations',
-                      'Responsive design'],
-          online: 'https://nijepa.github.io/project-battleship/',
-          source: 'https://github.com/nijepa/project-battleship',
-          tools: ['vue', 'js', 'css3']
-        },
-        {name: 'ZDE site', 
-          title: 'Web site made with JS and PHP', 
-          image: 'zde',
-          desc: 'Promotion and offering servicies CMS',
-          features: ['Front with ordering servicies',
-                      'Back with posibility to change all site content',
-                      'Made for the great guy',
-                      'Responsive design'],
-          online: '',
-          source: 'https://github.com/nijepa/zde',
-          tools: ['js', 'css3', 'php']
-        }],
-      currentProject: 'weatherapp',
-      currentProjectData: 
-        {name: 'Weather app', 
-          title: 'Weather app made with React', 
-          image: 'weatherapp',
-          desc: 'Enter a location and it will fetch the weather data from a weather API (openweathermap.org) and display an animated representation of the current weather along with values like temperature, humidity and state of the sky.',
-          features: ['Fetch new data for a new location without reloading',
-                      'Error handling for different HTTP status codes',
-                      'Keyframe based sky elements animations',
-                      'Responsive design'],
-          online: 'https://nijepa.github.io/weather-app/',
-          source: 'https://github.com/nijepa/weather-app',
-          tools: ['vue', 'js', 'css3']
-        }
-    }
-  },
-  methods: {
-    selectProject(project) {
-      this.currentProject = project;
-      this.currentProjectData = this.projectsData.find(this.checkProject)
+  export default {
+
+    name: 'Projects',
+
+    data() {
+      return {
+        title: '< PROJECTS />',
+        projectsData : 
+          [{name: 'ToDo list', 
+            title: 'ToDo list made with Vue', 
+            image: 'todolistvue',
+            desc: 'Chose a photo from 3 of them and try to find hidden character between many of characters.',
+            features: ['A photo tagging app',
+                        'Photos are stored on Firebase storage, database',
+                        'Game data mapping positions are stored in Firebase database',
+                        'Firebase also hold players scores'],
+            online: 'https://nijepa.github.io/todo-list-vue/',
+            source: 'https://github.com/nijepa/todo-list-vue',
+            tools: ['vue', 'js', 'css3']
+          },
+          {name: 'Weather app', 
+            title: 'Weather app made with Vue', 
+            image: 'weatherapp',
+            desc: 'Enter a location and it will fetch the weather data from a weather API (openweathermap.org) and a photo of (if availabile) for found location from another API (teleport.org).',
+            features: ['Fetch new data for a new location without reloading',
+                        'Error handling for different HTTP status codes',
+                        'Fetch location photo from another API',
+                        'Responsive design'],
+            online: 'https://nijepa.github.io/weather-app/',
+            source: 'https://github.com/nijepa/weather-app',
+            tools: ['vue', 'js', 'css3']
+          },
+          {name: "Where's Waldo game", 
+            title: "Where's Waldo made with Vue", 
+            image: 'whereswaldo',
+            desc: 'Chose a photo from 3 of them and try to find hidden character between many of characters.',
+            features: ['A photo tagging app',
+                        'Photos are stored on Firebase storage',
+                        'Game data mapping positions are stored in Firebase database',
+                        'Firebase also hold players scores'],
+            online: 'https://nijepa.github.io/whereswaldo/',
+            source: 'https://github.com/nijepa/whereswaldo',
+            tools: ['vue', 'js', 'css3', 'firebase']
+          },
+          {name: 'Laravel-VUE', 
+            title: 'Bussiness app made with VUE and Laravel', 
+            image: 'laravel-vue',
+            desc: 'App for managing meetings and projects, and presentation site with CMS.',
+            features: ['SPA app on top of API',
+                        'Built in messenger, todo list',
+                        'Authentication control and user menagment',
+                        'Responsive design'],
+            online: '',
+            source: 'https://github.com/nijepa/laravel-vue',
+            tools: ['vue', 'js', 'css3', 'sass', 'laravel', 'mysql']
+          },
+          {name: 'Battleship game', 
+            title: 'project-battleship app made with Vue', 
+            image: 'battleship',
+            desc: 'Enter a location and it will fetch the weather data from a weather API (openweathermap.org) and display an animated representation of the current weather along with values like temperature, humidity and state of the sky.',
+            features: ['Fetch new data for a new location without reloading',
+                        'Error handling for different HTTP status codes',
+                        'Keyframe based sky elements animations',
+                        'Responsive design'],
+            online: 'https://nijepa.github.io/project-battleship/',
+            source: 'https://github.com/nijepa/project-battleship',
+            tools: ['vue', 'js', 'css3']
+          },
+          {name: 'ZDE site', 
+            title: 'Web site made with JS and PHP', 
+            image: 'zde',
+            desc: 'Promotion and offering servicies CMS',
+            features: ['Front with ordering servicies',
+                        'Back with posibility to change all site content',
+                        'Made for the great guy',
+                        'Responsive design'],
+            online: '',
+            source: 'https://github.com/nijepa/zde',
+            tools: ['js', 'css3', 'php']
+          }],
+        currentProject: 'weatherapp',
+        currentProjectData: 
+          {name: 'Weather app', 
+            title: 'Weather app made with React', 
+            image: 'weatherapp',
+            desc: 'Enter a location and it will fetch the weather data from a weather API (openweathermap.org) and display an animated representation of the current weather along with values like temperature, humidity and state of the sky.',
+            features: ['Fetch new data for a new location without reloading',
+                        'Error handling for different HTTP status codes',
+                        'Keyframe based sky elements animations',
+                        'Responsive design'],
+            online: 'https://nijepa.github.io/weather-app/',
+            source: 'https://github.com/nijepa/weather-app',
+            tools: ['vue', 'js', 'css3']
+          }
+      }
     },
-    checkProject(image) {
-      return image.image == this.currentProject;
+    
+    methods: {
+      selectProject(project) {
+        this.currentProject = project;
+        this.currentProjectData = this.projectsData.find(this.checkProject)
+      },
+      checkProject(image) {
+        return image.image == this.currentProject;
+      }
     }
   }
-}
 </script>
 
-<style scoped>
+<style>
 /* Gallery */
 
   .gallery {
@@ -264,6 +267,22 @@ export default {
   .img__wrap:hover .img__img {
     opacity: 0.3;
   }
+  /* About section */
+
+  .about {
+    background: white;
+    padding: 50px;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    margin: 0;
+  }
+
+  .about img {
+    width: 100%;
+    height: auto;
+    max-width: 700px;
+  }
 
   .img__wrap:hover .middle {
     opacity: 1;
@@ -273,13 +292,16 @@ export default {
   .about__details h3 {
     text-decoration: underline;
   }
+
   .about__details {
     max-width: 500px;
   }
+
   .tool {
-    width: 40px;
+    width: 40px !important;
     margin: 5px;
   }
+
   .tools__used {
     display: flex;
     align-items: center;
@@ -291,9 +313,11 @@ export default {
     margin-right: 10px;
     vertical-align: middle
   } 
+
   .btns a {
     text-decoration: none;
   }
+
   .lin {
     display:inline-block;
     vertical-align:middle;

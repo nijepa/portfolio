@@ -18,8 +18,11 @@
         <div class="cover-wrapper text-center" id="home-content">
           <div class="cover-wrapper__inner">
             <div class="cover-wrapper__container">
+              <div class="cover__caption">
               <h1 id="myname">Nikola Pavićević</h1>
-                <a id="down" @click="startApp" href="#">More</a>
+              <h3>Full Stack Web Developer</h3>
+              </div>
+              <a id="down" @click="startApp" href="#">More</a>
             </div>
           </div>
         </div>
@@ -30,23 +33,32 @@
 </template>
 
 <script>
-export default {
-  name: 'Start',
-  props: { 
-    method: { type: Function }
-  },
-  methods: {
-    startApp() {
-      this.$emit('start-app', true);
+  export default {
+
+    name: 'Start',
+
+    props: { 
+      method: { type: Function }
+    },
+
+    methods: {
+      startApp() {
+        this.$emit('start-app', true);
+      }
     }
   }
-}
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-a {
-  color: #811ef1;
-  font-size: 15px;
-}
+  a {
+    color: #5517e6;
+    font-size: 15px;
+  }
+
+  .cover__caption {
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 2px solid black;
+    padding: 10px;
+  }
 </style>

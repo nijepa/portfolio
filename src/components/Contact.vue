@@ -37,11 +37,152 @@
 </template>
 
 <script>
-export default {
-  name: 'Touch'
-}
+  export default {
+    name: 'Touch'
+  }
 </script>
 
 <style>
+  /* Contact */
 
+  .contact {
+    justify-items: center;
+    margin-bottom: 50px;
+  }
+
+  .contact img {
+    width: 30px;
+  }
+
+  .contact p,a {
+    margin: 0;
+    padding: 0;
+  }
+
+  .contact a {
+    text-decoration: none;
+    color: rgb(26, 119, 212);
+  }
+
+  .contact p {
+    color: rgb(109, 109, 109);
+  }
+
+  .main-title {
+    display: grid;
+    grid-gap: 10px;
+    justify-items: center;
+    margin-top: 50px;
+  }
+  .title-title {
+    padding-top: 2rem;
+  }
+
+  form {
+    display: grid;
+    text-align: center;
+    justify-items: center;
+    justify-content: center;
+    background-color:transparent;
+    margin: 0 auto;
+    font-size: 14px;
+    padding: 50px 0;
+    border: 3px solid var(--black);
+    border-radius: 5px;
+  }
+
+  .input-group {
+    display: grid;
+    text-align: left;
+    width: 310px;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .input-group input, textarea {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+    text-align: center;
+    border: 0;
+    background-color: transparent;
+    border-bottom: 2px solid var(--black);
+  }
+
+  .input-group input:hover, input:focus, textarea:hover, textarea:focus {
+    border-bottom: 2px solid var(--yellow);
+    display: initial;
+    outline: none;
+  }
+
+  ::placeholder {
+    color: var(--black);
+    opacity: .8; /* Firefox */
+  }
+
+  .contact h3 {
+    font-size: 22px;
+  }
+
+  label {
+    margin-bottom: .5rem;
+    color: rgb(109, 109, 109);
+  }
+
+  #create {
+    align-content: center;
+    justify-content: center;
+    font-family: 'Ubuntu', sans-serif;
+    text-transform: uppercase;
+    background: transparent;
+    border: 0;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all ease-in-out 0.2s;
+    font-size: 16px;
+    display: flex;
+    grid-gap: 10px;
+    grid-template-columns: auto auto;
+    margin-top: 1rem;
+    color: var(--black);
+    border-radius: 5px;
+    height: 45px;
+    width: 310px; 
+    font-size: 16px;
+    vertical-align: sub;
+    fill: var(--black);
+  }
+
+  #create:hover {
+    -webkit-box-shadow: -1px 1px 12px 5px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 1px 12px 5px rgba(0,0,0,0.75);
+    box-shadow: -1px 1px 12px 5px rgba(0,0,0,0.75);
+    transform: scale(0.9);
+  /*   color: #1a6fb0;
+    fill: #1a6fb0; */
+    border-radius: 5px;
+  }
+
+  .send {
+    width: 35px;
+    align-self: center;
+  }
+
+  .send:hover {
+    width: 35px;
+  }
+
+  .email {
+    justify-self: left;
+  }
+
+  .form-footer {
+    margin: 3rem 1rem 1rem 1rem;
+    font-size: .8rem;
+    font-style: italic;
+  }
+
+  .bot {
+    margin-top: 3rem;
+    font-size: .6rem;
+  }
 </style>
