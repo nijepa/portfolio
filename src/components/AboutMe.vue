@@ -1,6 +1,6 @@
 <template>
-  <transition name="slide-fade">
-    <div class="">
+  <!-- <transition name="slide-fade"> -->
+    <div class="abo">
 
       <div class="top">
 
@@ -16,31 +16,31 @@
         <div class="cta cta1">
           <h3 class="price">Front<span>-end</span></h3>
           <p>HTML </p>
-          <img src="../assets/images/html5.svg" alt="">
+          <img :src="getSvgUrl('html5')" alt="">
           <p>CSS </p>
-          <img src="../assets/images/css3.svg" alt="">
+          <img :src="getSvgUrl('css3')" alt="">
           <p>Sass </p>
-          <img src="../assets/images/sass.svg" alt="">
+          <img :src="getSvgUrl('sass')" alt="">
           <p>JavaScript </p> 
-          <img src="../assets/images/js.svg" alt="">
+          <img :src="getSvgUrl('js')" alt="">
           <p>VueJS </p>
-          <img src="../assets/images/vue.svg" alt="">
+          <img :src="getSvgUrl('vue')" alt="">
         </div>
         
         <div class="cta cta2">
           <h3 class="price price2">Back<span class="back">-end</span></h3>
           <p>NodeJS</p>
-          <img src="../assets/images/nodejs2.svg" alt="">
+          <img :src="getSvgUrl('nodejs2')" alt="">
           <p>PHP</p>
-          <img src="../assets/images/php.svg" alt="">
+          <img :src="getSvgUrl('php')" alt="">
           <p>Laravel</p>
-          <img src="../assets/images/laravel.svg" alt="">
+          <img :src="getSvgUrl('laravel')" alt="">
           <p>MySQL</p>
-          <img src="../assets/images/mysql.svg" alt="">
+          <img :src="getSvgUrl('mysql')" alt="">
 <!--           <p>MongoDB</p>
           <img src="../assets/images/mongodb.svg" alt=""> -->
           <p>Firebase</p>
-          <img src="../assets/images/firebase.svg" alt="">
+          <img :src="getSvgUrl('firebase')" alt="">
         </div>
 
       </div>
@@ -48,31 +48,25 @@
       <h2 id="features" >/* ABOUT ME */</h2>
       <section class="features" >
         <div class="feature">
-          <!-- <span class="icon"><img src="images/front-end.svg" alt=""></span> -->
-          <!-- <h3>Design</h3> -->
           <h3 > I'm <span>from</span></h3>
-          <p> the Belgrade, Serbia.</p> 
+          <p> Kotor, Montenegro living in Belgrade, Serbia.</p> 
         </div>
         <div class="feature">
-          <!-- <h3>Beer</h3> -->
-          <h3 > My <span class="back">tools</span></h3>
-          <p> of choice are VueJS, NodeJS / Express and Laravel, and always ready to get on something different. </p>
-          <!-- <img src="images/Contour Line.svg" alt=""> -->
+          <h3> My <span class="back">tools</span></h3>
+          <p> of choice are VueJS, NodeJS / Express and Laravel, and always ready to get on something different.</p>
         </div>
         <div class="feature">
-          <!-- <h3>Wine</h3> -->
           <h3 > Currently <span >working</span></h3>
           <p> as a freelancer.</p>
         </div>
         <div class="feature">
-          <!-- <span class="icon">🎵</span> -->
           <h3 > Free <span class="back">time</span></h3>
-          <p> spend by listening music, walking or playing with doughter.</p>
+          <p> spend listening to music, walking or playing with doughter.</p>
         </div>
       </section>
       
     </div>
-  </transition>
+  <!-- </transition> -->
 </template>
 
 <script>
@@ -80,6 +74,9 @@
     name: 'AboutMe',
 
     methods: {
+      getSvgUrl(pic) {
+        return require('../assets/images/' + pic + '.svg')
+      },
       readFile() {
         window.open('/CV-English2020-2.pdf', '_blank') //to open in new tab
       }
@@ -88,6 +85,7 @@
 </script>
 
 <style>
+/* ABOUT */
 
   .top {
     /* height: 100vh; */
@@ -95,7 +93,8 @@
     grid-gap: 20px;
     grid-template-areas: 
       "hero hero cta1"
-      "hero hero cta2"
+      "hero hero cta2";
+    /* justify-content: space-around; */
   }
 
   .hero {
@@ -104,12 +103,14 @@
     background: white url(../assets/images/hero.png);
     background-size: cover;
     background-position: top left;
-    justify-content: center;
+    justify-content: space-around;
+    
     align-items: start;
     display: grid;
     grid-gap: 50px;
     grid-template-columns: auto auto;
     grid-template-rows: 1fr 1fr;
+    padding: 5px;
   }
 
   .hero >* {
@@ -121,18 +122,12 @@
     font-size: 16px;
   }
 
+  .hero h3 span { 
+    background-color: var(--yellow); 
+  }
+
   .hero h1 {
     align-self: flex-end;
-  }
-
-  #pdf {
-    height: 30px;
-  }
-
-  #textme {
-    grid-area: 1 / 2 / 3 / 3;
-    align-self: center;
-    justify-self: right;
   }
 
   .cta {
@@ -143,18 +138,13 @@
     grid-template-rows: 5ch  minmax(10px, 60px);
     align-items: initial;
     justify-items: center;
-    justify-content: baseline;
+    /* justify-content: baseline; */
     align-content: center;
 
     -webkit-box-shadow: 9px -9px 9px -7px rgba(0,0,0,0.75);
     -moz-box-shadow: 9px -9px 9px -7px rgba(0,0,0,0.75);
     box-shadow: 9px -9px 9px -7px rgba(0,0,0,0.75);
     border-radius: 0 5px 0 0;
-  }
-
-  svg {
-    vertical-align: middle;
-    justify-self: left;
   }
 
   .cta p {
@@ -200,21 +190,44 @@
     color: var(--yel);
   }
 
+  .pdf__link {
+    grid-area: 1 / 2 / 3 / 3;
+    align-self: center;
+    justify-self: right;
+    background: none;
+  }
+  
+  #pdf {
+    height: 30px;
+  }
+
+  #textme {
+    grid-area: 1 / 2 / 3 / 3;
+    align-self: center;
+    justify-self: right;
+  }
+
+  svg {
+    vertical-align: middle;
+    justify-self: left;
+  }
+
   span {
-    color: var(--yel);
+    color: var(--blue);
   }
 
   .back {
-    color: #1247f7;
+    color: var(--blue);
   }
 
-  /* Features */
+/* Features */
 
   .features {
     display: grid;
     grid-gap: 20px;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     font-family: 'Nanum Pen Script', cursive;
+    justify-content: space-around;
   }
 
   #features {
@@ -250,10 +263,4 @@
     font-size: 24px;
   }
 
-  .pdf__link {
-    grid-area: 1 / 2 / 3 / 3;
-    align-self: center;
-    justify-self: right;
-    background: none;
-  }
 </style>

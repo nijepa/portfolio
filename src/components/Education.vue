@@ -1,53 +1,71 @@
 <template>
   <div class="education">
     <h2 id="about">{{title}}</h2>
-    <!-- <div class="edu" v-for="course in courses" :key="course">
-      <h1 class="course">{{course.title}}</h1>
-      <img style="display: block;" class="course__img" :src="require('../assets/images/' + course.image + '.svg')" alt="Yummy Taco" >
-      <p class="course__text">{{course.desc}}</p>
-    </div> -->
     <div class="edu">
-      <a href="https://www.theodinproject.com" target="_blank" class="course"><h1>The Odin Project</h1></a>
+      <a href="https://www.theodinproject.com" target="_blank" class="course">
+        <h1>The Odin Project</h1>
+      </a>
       <div class="course__white">
-        <img class="course__img odin" :src="require('../assets/images/odin-logo.svg')" alt="Yummy Taco" >
+        <img class="course__img odin" :src="getSvgUrl('odin-logo')" alt="Yummy Taco" >
       </div>
-      
-      
       <div class="course__text">
-        <p class=""><a href="https://www.theodinproject.com" target="_blank"> The Odin Project </a> is where my web development education currently is.</p>
+        <p class="">
+          <a href="https://www.theodinproject.com" target="_blank"> The Odin Project 
+          </a> is where my web development education currently is.
+        </p>
         <p>It's an open source full-stack curriculum that covers from the very basics like setting up your local development environment, to building and deploying a GitHub clone.</p>
         <p>It has a hands-on approach where learning by making is the main idea, reinforcing every bit of the plentiful theory it offers.</p>
         <p>I went through the  3/5 of curriculum in two months, almost every day, learning the in and outs of web development.</p>
-        <p>Till now I build all the required projects, which You can look at my <a href="https://github.com/nijepa?tab=projects" target="_blank"> GitHub repositories</a>.</p>
+        <p>Till now I build all the required projects, which You can look at my 
+          <a href="https://github.com/nijepa?tab=projects" target="_blank"> GitHub repositories
+          </a>.
+        </p>
         <p>My wish is to finish it in one more month, to round my knowledge as a full-stack developer.</p>
       </div>
     </div>
 
     <div class="edu1">
-      <a href="https://www.udemy.com" target="_blank" class="course"><h1>Udemy</h1></a>
-      
+      <a href="https://www.udemy.com" target="_blank" class="course">
+        <h1>Udemy</h1>
+      </a>
       <div class="course__text">
-        <p class=""><a href="https://www.udemy.com" target="_blank"> Udemy </a> is global marketplace for learning and instruction.</p>
-        <p>From the many courses Udemy offers, i took <a href="https://www.udemy.com/course/laravel-api-development-vue-js-spa-from-scratch/learn/lecture/15413190?start=0#overview">Laravel API Development & Vue JS SPA from Scratch</a> .</p>
-        <p>It was learning how to develop the required API to power a simple address book project named <a href="https://github.com/nijepa/jot"> Jot</a>.</p>
-        <p><a href="https://github.com/nijepa/jot">Jot</a> is a SPA written in Vue JS using the TailwindCSS front-end framework.</p>
+        <p class="">
+          <a href="https://www.udemy.com" target="_blank"> Udemy 
+          </a> is global marketplace for learning and instruction.
+        </p>
+        <p>From the many courses Udemy offers, i took 
+          <a href="https://www.udemy.com/course/laravel-api-development-vue-js-spa-from-scratch/learn/lecture/15413190?start=0#overview" target="_blank">Laravel API Development & Vue JS SPA from Scratch
+          </a> .
+        </p>
+        <p>It was learning how to develop the required API to power a simple address book project named <a href="https://github.com/nijepa/jot" target="_blank"> Jot</a>.</p>
+        <p>
+          <a href="https://github.com/nijepa/jot" target="_blank">Jot
+          </a> is a SPA written in Vue JS using the TailwindCSS front-end framework.
+        </p>
         <p>From the back-end part, it was RESTful API Development with Laravel.</p>
         <p>It was 5 and a half hours and 50 lessons long journey that left me nice small project and make more hunger for more knowledge.</p>
       </div>
-      <img style="display: block;" class="course__img" :src="require('../assets/images/udemy-logo.svg')" alt="Yummy Taco" >
+      <img style="display: block;" class="course__img" :src="getSvgUrl('udemy-logo')" alt="Yummy Taco" >
     </div>
 
     <div class="edu">
-      <a href="https://www.freecodecamp.org/" target="_blank" class="course"><h1>freeCodeCamp</h1></a>
-      <img style="display: block;" class="course__img" :src="require('../assets/images/freecodecamp-logo.svg')" alt="Yummy Taco" >
-      
+      <a href="https://www.freecodecamp.org/" target="_blank" class="course">
+        <h1>freeCodeCamp</h1>
+      </a>
+      <img style="display: block;" class="course__img" :src="getSvgUrl('freecodecamp-logo')" alt="Yummy Taco" >
       <div class="course__text">
-        <p class=""><a href="https://www.freecodecamp.org/" target="_blank"> freeCodeCamp </a> helps you learn to code by building projects.</p>
+        <p class="">
+          <a href="https://www.freecodecamp.org/" target="_blank"> freeCodeCamp 
+          </a> helps you learn to code by building projects.
+        </p>
         <p>I learn to code by completing coding challenges and building projects.</p>
-        <p>Also I earned couple of verified certifications along the way, <a href="https://www.freecodecamp.org/certification/fcce8b7e137-31ae-4bb5-915f-a76095b3ad2d/responsive-web-design"> Responsive Web Design </a> and JavaScript Algorithms and Data Structures.</p>
+        <p>Also I earned couple of verified certifications along the way, 
+          <a href="https://www.freecodecamp.org/certification/fcce8b7e137-31ae-4bb5-915f-a76095b3ad2d/responsive-web-design" target="_blank"> Responsive Web Design 
+          </a> and JavaScript Algorithms and Data Structures.
+        </p>
         <p>Each certification takes around 300 hours of dedicated learning.</p>
         <p>These certifications are completely self-paced, so take as long as you need.</p>
-        <p>This journey deafinetly make turn in my carear and draw my future path as a web developer.</p>
+        <p>This journey definitely make turn in my career, and draw my future path as a web developer.</p>
       </div>
     </div>
   </div>
@@ -71,7 +89,8 @@ export default {
                 Later on I was lucky enough to be offered joining the project as a moderator.
 
                 Since then I help to mantain the repositories checking on pull requests, solving student's questions and issues on the Discord chat rooms and keeping an eye on the forum.`,
-                image: 'odin-logo'},
+                image: 'odin-logo',
+                link: 'https://www.theodinproject.com'},
                 {title: 'Udemy', 
                 desc: `The Odin Project is where my web development story started.
 
@@ -82,7 +101,8 @@ export default {
                 Later on I was lucky enough to be offered joining the project as a moderator.
 
                 Since then I help to mantain the repositories checking on pull requests, solving student's questions and issues on the Discord chat rooms and keeping an eye on the forum.`,
-                image: 'udemy-logo'},
+                image: 'udemy-logo',
+                link: 'https://www.udemy.com'},
                 {title: 'freeCodeCamp', 
                 desc: `The Odin Project is where my web development story started.
 
@@ -93,16 +113,24 @@ export default {
                 Later on I was lucky enough to be offered joining the project as a moderator.
 
                 Since then I help to mantain the repositories checking on pull requests, solving student's questions and issues on the Discord chat rooms and keeping an eye on the forum.`,
-                image: 'freecodecamp-logo'}]
+                image: 'freecodecamp-logo',
+                link: 'https://www.freecodecamp.org/'}]
     }
-  }
+  },
+
+  methods: {
+      getSvgUrl(pic) {
+        return require('../assets/images/' + pic + '.svg')
+      }
+    }
 }
 </script>
 
 <style>
+/* EDUCATION */
+
   .edu {
     display: grid;
-    
     grid-template-columns: auto auto;
     grid-template-rows: auto auto;
     justify-items: center;
@@ -134,12 +162,13 @@ export default {
     grid-area: image;
     height: 70px;
     align-self: center;
+    margin-right: 5px;
   }
+
   .course__text {
     grid-area: desc;
     padding: 10px;
     background-color: rgba(255, 255, 255, 0.5);
-    
   }
 
   .course__white {
@@ -163,7 +192,7 @@ export default {
       "desc desc"
     }
     .course__img {
-      height: 40px;
+      height: 30px;
       width: auto;
     }
   }

@@ -81,6 +81,9 @@ button:focus {
   body {
     overflow-x: hidden;
   }
+  .slides {
+    display: block;
+  }
 }
 
 @media (max-width: 700px) {
@@ -95,10 +98,20 @@ button:focus {
   body {
     overflow-x: hidden;
   }
+  .cover-wrapper__inner {
+    display: grid;
+  }
+  .cover-wrapper__container {
+    align-self: end;
+  }
+  .music__btn {
+    justify-self: center;
+  }
 }
 
 @media (max-width: 500px) {
   .top {
+    justify-content: center;
     grid-template-areas: 
     "hero"
     "cta1" 
@@ -109,5 +122,9 @@ button:focus {
   }
   #menu-list {
     grid-template-columns: 1fr;
+  }
+  .tools__used {
+    display: grid;
+    grid-template-columns: auto auto;
   }
 }

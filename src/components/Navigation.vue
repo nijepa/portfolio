@@ -5,25 +5,13 @@
       <span class="close">×</span>
       Menu
     </button>
+
     <ul id="menu-list" >
       <li v-for="item in menuItems" :key="item.id">
-        <a :id="item.id" :class="item.id == activeLink ? 'active__link' : 'forhover'" @click="navClick">{{ item.title }}</a>
+        <a :id="item.id" :class="item.id == activeLink ? 'active__link' : 'for__hover'" 
+            @click="navClick">{{ item.title }}
+        </a>
       </li>
-<!--       <li>
-        <a id="home" class="forhover" href="" @click="navClick">N</a>
-      </li>
-      <li>
-        <a id="abouts" :class="'abouts' == activeLink ? 'active__link' : 'forhover'" @click="navClick">About</a>
-      </li>
-      <li>
-        <a id="tools" :class="'tools' == activeLink ? 'active__link' : 'forhover'" @click="navClick">Projects</a>
-      </li>
-      <li>
-        <a id="education" :class="'education' == activeLink ? 'active__link' : 'forhover'" @click="navClick">Education</a>
-      </li>
-      <li>
-        <a id="contacts" :class="'contacts' == activeLink ? 'active__link' : 'forhover'" @click="navClick">Contact</a>
-      </li> -->
     </ul>
   </nav>
 </template>
@@ -53,19 +41,25 @@
         navButton1.setAttribute('aria-expanded', false);
         this.activeLink = event.target.id;
         this.$emit('nav-click', event);
+        this.scrollTop()
       },
       toggleNav({ target }) {
         const navButton = document.querySelector('button[aria-expanded]');
         console.log(target);
         const expanded = target.getAttribute('aria-expanded') === 'true' || false;
         navButton.setAttribute('aria-expanded', !expanded);
+      },
+      scrollTop () {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
       }
     }
   }
 </script>
 
 <style>
-  /*Navigation */
+/* NAVIGATION */
+
   .active__link {
     color: var(--yel) !important;
     box-shadow: none  !important;
@@ -76,6 +70,7 @@
     position: -webkit-sticky;
     position: sticky; 
     top: 0;
+    z-index: 100;
     /* background: linear-gradient(to right, var(--orange), var(--blue)); */
   }
 
@@ -103,17 +98,8 @@
     transition: all ease-in-out 0.4s;
   }
 
-/*  .menu a:hover {
-      transform: scale(1.1);
-      background: var(--orange);
-      -webkit-box-shadow: 9px 9px 9px -7px rgba(0,0,0,0.75);
-      -moz-box-shadow: 9px 9px 9px -7px rgba(0,0,0,0.75);
-      box-shadow: 9px 9px 9px -7px rgba(0,0,0,0.75);
-      border-radius: 0 0 5px 0;
-    } */
-
-  .forhover:hover {
-    transform: scale(1.1);
+  .for__hover:hover {
+    transform: scale(1.03);
     background: var(--orange);
     -webkit-box-shadow: 9px 9px 9px -7px rgba(0,0,0,0.75);
     -moz-box-shadow: 9px 9px 9px -7px rgba(0,0,0,0.75);
@@ -123,8 +109,7 @@
   }
 
   [aria-controls="menu-list"] {
-    /* margin: 5px; */
-    /* display: none; */
     cursor: pointer;
   }
+
 </style>
