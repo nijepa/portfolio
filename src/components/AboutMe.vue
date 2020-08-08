@@ -78,7 +78,7 @@
         return require('../assets/images/' + pic + '.svg')
       },
       readFile() {
-        window.open('/CV-English2020-2.pdf', '_blank') //to open in new tab
+        window.open('../assets/images/CV-English2020-2.pdf', '_blank') //to open in new tab
       }
     }
   }

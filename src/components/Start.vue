@@ -97,7 +97,7 @@
                 </svg>
 
                 <div id="seek">
-                  <div v-on:click="seek" class="player-progress" title="Seek">
+                  <div  class="player-progress" title="Seek">
                     <div :style="{ width: this.percentComplete + '%' }" class="player-seeker"></div>
                   </div>
                 </div>

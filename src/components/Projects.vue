@@ -268,10 +268,11 @@
       selectProject(project) {
         this.currentProject = project;
         this.currentProjectData = this.projectsData.find(this.checkProject);
-        this.initArrows();
         this.currentSlide = 1;
         this.newSlide = true;
+        window.scrollTo(0,0);
         setTimeout(() => this.newSlide = false, 1000);
+        this.initArrows();
       },
       
       checkProject(image) {
@@ -280,6 +281,7 @@
 
       initArrows() {
         if (this.currentProjectData.images.length > 1) {
+          this.togglePrevArrow = false;
           return this.toggleNextArrow = true;
         }
         this.toggleNextArrow = false;
@@ -571,7 +573,7 @@
     /* transition: opacity .2s, visibility .2s; */
   }
 
-  .img__description:hover {
+  .img__description:hover, .img__description:active {
     background: var(--orange);
     -webkit-box-shadow: 9px 9px 9px -7px rgba(0,0,0,0.75);
     -moz-box-shadow: 9px 9px 9px -7px rgba(0,0,0,0.75);
