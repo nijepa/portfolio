@@ -1,84 +1,241 @@
 <template>
-  <!-- <transition name="slide-fade"> -->
-    <div class="abo">
+  <div class="abo">
 
-      <div class="top">
+    <div class="top">
 
-        <header class="hero">
-          <h1>Nikola Pavićević</h1>
-          <h3>Full Stack Web Developer</h3>
-          <a class="pdf__link" href="/CV-English2020-2.pdf" download>
+      <header class="hero">
+        <transition name="bounce" mode="out-in">
+<!--          <img id="avatar" alt="" :src="photoType ? photo : avatar"-->
+<!--                @mouseover="photoType = true" @mouseout="photoType = false" @click="photoType = !photoType"-->
+<!--                v-on:load="onApeared" v-show="apeared">-->
+  <!--        <img :key="1" class="avatar" v-if="photoType === false" alt="" :src="require('@/assets/images/meavatar.png')"
+               @mouseover="photoType = true" @click="photoType = !photoType"
+               v-on:load="onApeared" v-show="apeared">-->
+          <img class="avatar" alt="" :src="images[currentID]"
+                v-show="apeared"
+              >
+
+ <!--         <div class="avatar" v-bind:style="{'background-image': 'url(' + images[currentID] + ')'}"
+               v-bind:key="currentID" @click="mouseover">
+          </div>-->
+        </transition>
+
+        <h1 class="me_myself_and_i line-1 anim-typewriter">Nikola Pavićević</h1>
+        <h3 class="me_myself_and_i line-1 anim-typewriter">Full Stack Web Developer</h3>
+
+        <transition name="bounce">
+          <a class="pdf__link" href="/CV-English2020-web.pdf" download v-on:load="onApeared" v-show="apeared">
             <button id="textme"> Portfolio <img id="pdf" src="@/assets/images/pdf.svg">
             </button>
           </a>
-        </header>
+        </transition>
+      </header>
 
-        <div class="cta cta1">
-          <h3 class="price">Front<span>-end</span></h3>
-          <p>HTML </p>
-          <img :src="getSvgUrl('html5')" alt="">
-          <p>CSS </p>
-          <img :src="getSvgUrl('css3')" alt="">
-          <p>Sass </p>
-          <img :src="getSvgUrl('sass')" alt="">
-          <p>JavaScript </p> 
-          <img :src="getSvgUrl('js')" alt="">
-          <p>VueJS </p>
-          <img :src="getSvgUrl('vue')" alt="">
-        </div>
-        
-        <div class="cta cta2">
-          <h3 class="price price2">Back<span class="back">-end</span></h3>
-          <p>NodeJS</p>
-          <img :src="getSvgUrl('nodejs2')" alt="">
-          <p>PHP</p>
-          <img :src="getSvgUrl('php')" alt="">
-          <p>Laravel</p>
-          <img :src="getSvgUrl('laravel')" alt="">
-          <p>MySQL</p>
-          <img :src="getSvgUrl('mysql')" alt="">
-<!--           <p>MongoDB</p>
-          <img src="../assets/images/mongodb.svg" alt=""> -->
-          <p>Firebase</p>
-          <img :src="getSvgUrl('firebase')" alt="">
-        </div>
+      <div class="cta cta1">
 
+        <h3 class="price">Front<span>-end</span></h3>
+
+        <transition name="left">
+          <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5" target="_blank" class="link__front"
+              v-on:load="onApeared" v-show="apeared">HTML
+          </a>
+        </transition>
+        <transition name="fall">
+          <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5" target="_blank" class="tool"
+              v-on:load="onApeared" v-show="apeared">
+            <img :src="getSvgUrl('html5')" alt="">
+          </a>
+        </transition>
+        <transition name="right">
+          <a href="https://www.tutorialrepublic.com/css-tutorial/" target="_blank" class="link__front"
+              v-on:load="onApeared" v-show="apeared">CSS
+          </a>
+        </transition>
+        <transition name="fall">
+          <a href="https://www.tutorialrepublic.com/css-tutorial/" target="_blank" class="tool"
+              v-on:load="onApeared" v-show="apeared">
+            <img :src="getSvgUrl('css3')" alt="">
+          </a>
+        </transition>
+        <transition name="left">
+          <a href="https://sass-lang.com/" target="_blank" class="link__front"
+              v-on:load="onApeared" v-show="apeared">Sass
+          </a>
+        </transition>
+        <transition name="right">
+          <a href="https://sass-lang.com/" target="_blank" class="tool"
+              v-on:load="onApeared" v-show="apeared">
+            <img :src="getSvgUrl('sass')" alt="" v-on:load="onApeared" v-show="apeared">
+          </a>
+        </transition>
+        <transition name="right">
+          <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" class="link__front"
+              v-on:load="onApeared" v-show="apeared">JavaScript
+          </a>
+        </transition>
+        <transition name="rise">
+          <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" class="tool"
+              v-on:load="onApeared" v-show="apeared">
+            <img :src="getSvgUrl('js')" alt="" v-on:load="onApeared" v-show="apeared">
+          </a>
+        </transition>
+        <transition name="left">
+          <a href="https://vuejs.org/" target="_blank" class="link__front"
+              v-on:load="onApeared" v-show="apeared">VueJS
+          </a>
+        </transition>
+        <transition name="rise">
+          <a href="https://vuejs.org/" target="_blank" class="tool"
+              v-on:load="onApeared" v-show="apeared">
+            <img :src="getSvgUrl('vue')" alt="" v-on:load="onApeared" v-show="apeared">
+          </a>
+        </transition>
       </div>
 
-      <h2 id="features" >/* ABOUT ME */</h2>
-      <section class="features" >
-        <div class="feature">
+      <div class="cta cta2">
+        <h3 class="price price2">Back<span class="back">-end</span></h3>
+        <transition name="fall">
+          <a href="https://nodejs.org/en/" target="_blank" class="link__back"
+              v-on:load="onApeared" v-show="apeared">NodeJS
+          </a>
+        </transition>
+        <transition name="left">
+          <a href="https://nodejs.org/en/" target="_blank" class="tool"
+              v-on:load="onApeared" v-show="apeared">
+            <img :src="getSvgUrl('nodejs2')" alt="">
+          </a>
+        </transition>
+        <transition name="fall">
+          <a href="https://www.php.net/" target="_blank" class="link__back"
+              v-on:load="onApeared" v-show="apeared">PHP
+          </a>
+        </transition>
+        <transition name="right">
+          <a href="https://www.php.net/" target="_blank" class="tool"
+              v-on:load="onApeared" v-show="apeared">
+            <img :src="getSvgUrl('php')" alt="">
+          </a>
+        </transition>
+        <transition name="right">
+          <a href="https://laravel.com/" target="_blank" class="link__back"
+              v-on:load="onApeared" v-show="apeared">Laravel
+          </a>
+        </transition>
+        <transition name="left">
+          <a href="https://laravel.com/" target="_blank" class="tool"
+              v-on:load="onApeared" v-show="apeared">
+            <img :src="getSvgUrl('laravel')" alt="">
+          </a>
+        </transition>
+        <transition name="left">
+          <a href="https://www.mysql.com/" target="_blank" class="link__back"
+              v-on:load="onApeared" v-show="apeared">MySQL
+          </a>
+        </transition>
+        <transition name="right">
+          <a href="https://www.mysql.com/" target="_blank" class="tool"
+              v-on:load="onApeared" v-show="apeared">
+            <img :src="getSvgUrl('mysql')" alt="">
+          </a>
+        </transition>
+        <transition name="rise">
+          <a href="https://www.mongodb.com/" target="_blank" class="link__back"
+              v-on:load="onApeared" v-show="apeared">MongoDB
+          </a>
+        </transition>
+        <transition name="left">
+          <a href="https://www.mongodb.com/" target="_blank" class="tool"
+              v-on:load="onApeared" v-show="apeared">
+            <img :src="getSvgUrl('mongodb')" alt="">
+          </a>
+        </transition>
+        <transition name="rise">
+          <a href="https://firebase.google.com/" target="_blank" class="link__back"
+              v-on:load="onApeared" v-show="apeared">Firebase
+          </a>
+        </transition>
+        <transition name="right">
+          <a href="https://firebase.google.com/" target="_blank" class="tool"
+              v-on:load="onApeared" v-show="apeared">
+            <img :src="getSvgUrl('firebase')" alt="">
+          </a>
+        </transition>
+      </div>
+
+    </div>
+
+    <h2 id="features" >/* ABOUT ME */</h2>
+    <section class="features" >
+      <transition name="fly">
+        <div class="feature" v-on:load="onApeared" v-show="apeared">
           <h3 > I'm <span>from</span></h3>
-          <p> Kotor, Montenegro living in Belgrade, Serbia.</p> 
+          <p> Kotor, Montenegro living in Belgrade, Serbia.</p>
         </div>
-        <div class="feature">
+      </transition>
+      <transition name="flyr">
+        <div class="feature" v-on:load="onApeared" v-show="apeared">
           <h3> My <span class="back">tools</span></h3>
-          <p> of choice are VueJS, NodeJS / Express and Laravel, and always ready to get on something different.</p>
+          <p> of choice are JavaScript, VueJS, NodeJS / Express and Laravel,
+              and always ready to get on something different.</p>
         </div>
-        <div class="feature">
+      </transition>
+      <transition name="fly">
+        <div class="feature" v-on:load="onApeared" v-show="apeared">
           <h3 > Currently <span >working</span></h3>
           <p> as a freelancer.</p>
         </div>
-        <div class="feature">
+      </transition>
+      <transition name="flyr">
+        <div class="feature" v-on:load="onApeared" v-show="apeared">
           <h3 > Free <span class="back">time</span></h3>
-          <p> spend listening to music, walking or playing with doughter.</p>
+          <p> spend traveling with family, listening to music, walking or
+              playing with doughter and little schnauzer.</p>
         </div>
-      </section>
-      
-    </div>
-  <!-- </transition> -->
+      </transition>
+    </section>
+  </div>
 </template>
 
 <script>
   export default {
+
     name: 'AboutMe',
 
+    data() {
+      return {
+        avatar: require('@/assets/images/meavatar.png'),
+        photo: require('@/assets/images/me.jpg'),
+        photoType: false,
+        apeared: false,
+        images: [
+            require('@/assets/images/meavatar.png'),
+            require('@/assets/images/me.jpg')
+        ],
+        currentID: 1,
+      }
+    },
+
     methods: {
+
       getSvgUrl(pic) {
         return require('../assets/images/' + pic + '.svg')
       },
+
       readFile() {
         window.open('../assets/images/CV-English2020-2.pdf', '_blank') //to open in new tab
+      },
+
+      toggleImage() {
+          if(this.currentID < this.images.length-1){
+              this.currentID +=1
+          } else {
+              this.currentID = 0
+          }
+          // this.apeared = true;
+      },
+
+      onApeared() {
+        this.apeared = true;
       }
     }
   }
@@ -88,13 +245,11 @@
 /* ABOUT */
 
   .top {
-    /* height: 100vh; */
     display: grid;
     grid-gap: 20px;
-    grid-template-areas: 
+    grid-template-areas:
       "hero hero cta1"
       "hero hero cta2";
-    /* justify-content: space-around; */
   }
 
   .hero {
@@ -104,13 +259,14 @@
     background-size: cover;
     background-position: top left;
     justify-content: space-around;
-    
+
     align-items: start;
     display: grid;
-    grid-gap: 50px;
+ /*    grid-gap: 17px; */
+    grid-row-gap: 50px;
     grid-template-columns: auto auto;
-    grid-template-rows: 1fr 1fr;
-    padding: 5px;
+    grid-template-rows: .1fr 1fr 1fr;
+    padding: 1em;
   }
 
   .hero >* {
@@ -122,12 +278,22 @@
     font-size: 16px;
   }
 
-  .hero h3 span { 
-    background-color: var(--yellow); 
+  .hero h3 span {
+    background-color: var(--yellow);
   }
 
   .hero h1 {
     align-self: flex-end;
+  }
+
+  .avatar {
+    width: auto;
+    height: 100px;
+    border-radius: 40%;
+    background: transparent;
+    justify-self: center;
+    cursor: pointer;
+    /* border: 2px solid var(--yellow); */
   }
 
   .cta {
@@ -138,27 +304,50 @@
     grid-template-rows: 5ch  minmax(10px, 60px);
     align-items: initial;
     justify-items: center;
-    /* justify-content: baseline; */
     align-content: center;
-
     -webkit-box-shadow: 9px -9px 9px -7px rgba(0,0,0,0.75);
     -moz-box-shadow: 9px -9px 9px -7px rgba(0,0,0,0.75);
     box-shadow: 9px -9px 9px -7px rgba(0,0,0,0.75);
     border-radius: 0 5px 0 0;
   }
 
-  .cta p {
+  .cta a {
     margin: 0;
     justify-self: right;
     align-self: center;
     margin-right: 10px;
+    text-decoration:none;
+  }
+
+  .cta a .link__back {
+    color: var(--yel);
+  }
+
+  .link__back:visited {
+    color: var(--yel);
+  }
+
+  .link__front:visited {
+    color: var(--blue);
+  }
+
+  a:link {
+      color: var(--yel);
+    }
+
+  .cta .tool {
+    justify-self: left;
   }
 
   .cta img {
     max-width: 100%;
     width: 50px;
     height: 50px;
-    justify-self: left;
+    /* justify-self: left; */
+  }
+
+  .cta img:hover {
+    transform: scale(1.1);
   }
 
   .cta1 {
@@ -196,7 +385,7 @@
     justify-self: right;
     background: none;
   }
-  
+
   #pdf {
     height: 30px;
   }
@@ -213,7 +402,7 @@
   }
 
   span {
-    color: var(--blue);
+    color: var(--yel);
   }
 
   .back {
@@ -263,4 +452,40 @@
     font-size: 24px;
   }
 
+  .line-1 {
+/*     position: relative;
+    top: 50%;
+    width: 24em;
+    margin: 0 auto;
+    border-right: 2px solid rgba(255,255,255,.75);
+    font-size: 180%;
+    text-align: center;  */
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 175px;
+    /* transform: translateY(-50%);     */
+  }
+
+  /* Animation */
+  .anim-typewriter {
+    animation: typewriter 4s steps(44) 1s 1 normal both,
+              blinkTextCursor 500ms steps(44) infinite normal;
+  }
+
+  @keyframes typewriter{
+    from{width: 0;}
+    to{width: 175px;}
+  }
+
+  @keyframes blinkTextCursor{
+    from{border-right-color: rgba(255,255,255,.75);}
+    to{border-right-color: transparent;}
+  }
+
+  /* @media (max-width: 874px) {
+    .line-1{
+      white-space:normal;
+      overflow:visible;
+    }
+  } */
 </style>

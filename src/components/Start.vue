@@ -15,8 +15,8 @@
           <div class="small-circle"></div>
         </div>
 
-        <div class="cover-wrapper text-center" id="home-content">
-          <div class="cover-wrapper__inner" v-on:click="seek">
+        <div class="cover-wrapper text-center" id="home-content" v-on:click="seek">
+          <div class="cover-wrapper__inner">
             <div class="cover-wrapper__container">
               <div class="cover__caption">
                 <h1 id="myname">Nikola Pavićević</h1>
@@ -29,9 +29,10 @@
             </div>
 
             <div class="music__btn" @click.prevent="isPlaying ? pause(track) : play(track)">
-              
-                <svg v-on:click.prevent="playing = !playing" v-if="isPlaying" id="Capa_1" x="0px" y="0px" :class="isPlaying ? 'play__m Capa_1' : 'Capa_1'"
-                  viewBox="0 0 52.821 52.821" style="enable-background:new 0 0 52.821 52.821;" xml:space="preserve">
+
+                <svg v-on:click.prevent="playing = !playing" v-if="isPlaying" id="Capa_1" x="0px" y="0px"
+                     :class="isPlaying ? 'play__m Capa_1' : 'Capa_1'"
+                      viewBox="0 0 52.821 52.821" style="enable-background:new 0 0 52.821 52.821;" xml:space="preserve">
                   <g>
                   <path d="M51.82,19.074c-1.488-5.344-4.965-10.164-9.608-13.189C37.292,2.68,30.86,1.717,25.106,1.588
                     C17.071,1.404,6.893,4.49,2.94,12.152c-0.329,0.637,0.64,1.184,0.969,0.547c2.801-5.43,9.491-8.566,15.263-9.594
@@ -58,7 +59,7 @@
                   </g>
                 </svg>
                 <svg v-on:click.prevent="playing = !playing" v-else class="Capa_1" id="Layer_1" x="0px" y="0px"
-                  viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                      viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
                   <g>
                     <g>
                       <path d="M256,0C114.842,0,0,114.842,0,256s114.842,256,256,256s256-114.842,256-256S397.158,0,256,0z M256,482.743
@@ -114,7 +115,7 @@
 
     name: 'Start',
 
-    props: { 
+    props: {
       method: { type: Function }
     },
 
@@ -138,7 +139,7 @@
 
     computed: {
       percentComplete () {
-        return parseInt(this.currentSeconds / this.durationSeconds * 100);
+        return parseInt(parseInt(this.currentSeconds) / parseInt(this.durationSeconds) * 100);
       }
     },
 
@@ -159,6 +160,7 @@
       },
 
       play (audio) {
+        console.log(this.track.duration)
         this.isPlaying = true;
         this.playing = true;
         audio.play();
@@ -180,6 +182,7 @@
         if (!this.loaded) return;
         const el = e.target.getBoundingClientRect();
         const seekPos = (e.clientX - el.left) / el.width;
+        //console.log(seekPos)
         this.track.currentTime = parseInt(this.track.duration * seekPos);
       },
 
@@ -203,29 +206,36 @@
     font-size: 15px;
   }
 
+  #down {
+    position: relative;
+    z-index: 11111111;
+  }
+
   .Capa_1 {
     width: 20px;
     height: auto;
     cursor: pointer;
     transition: all .3s ease-in-out;
+    position: relative;
+    z-index: 11111111;
   }
 
   .Capa_1:hover {
     fill: var(--yel);
     transform: scale(1.3);
-    
+    z-index: 11111111;
   }
 
-  .play__m {
+/*   .play__m {
     fill: var(--yellow);
-  }
-  
+  } */
+
   .cover__caption {
     margin-bottom: 15px;
     border-radius: 5px;
     border: 2px double black;
     padding: 10px;
-/*    box-shadow: 
+/*    box-shadow:
     0 0 0 5px hsl(217, 89%, 48%), */
   /*   0 0 0 10px hsl(0, 0%, 60%),
     0 0 0 15px hsl(0, 0%, 40%), */
@@ -236,15 +246,17 @@
     cursor: pointer;
     height: 50%;
     min-width: 200px;
-    // position: relative;
-    
-    .player-seeker {
-      background-color: var(--blue);
-      bottom: 0;
-      left: 0;
-      position: absolute;
-      top: 0;
-      opacity: .3;
-    }
-}
+    /* position: relative;*/
+  }
+
+  .player-seeker {
+    background-color: var(--blue);
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    top: 0;
+    opacity: .3;
+    z-index: 2;
+  }
+
 </style>

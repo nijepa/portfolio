@@ -1,5 +1,6 @@
 <template>
   <nav class="menu">
+
     <button aria-expanded="false" aria-controls="menu-list" @click="toggleNav">
       <span class="open">☰</span>
       <span class="close">×</span>
@@ -8,11 +9,12 @@
 
     <ul id="menu-list" >
       <li v-for="item in menuItems" :key="item.id">
-        <a :id="item.id" :class="item.id == activeLink ? 'active__link' : 'for__hover'" 
+        <a :id="item.id" :class="item.id === activeLink ? 'active__link' : 'for__hover'"
             @click="navClick">{{ item.title }}
         </a>
       </li>
     </ul>
+
   </nav>
 </template>
 
@@ -20,22 +22,23 @@
   export default {
     name: 'Navigation',
 
-    props: { 
+    props: {
       method: { type: Function }
     },
 
     data() {
       return {
         activeLink: 'abouts',
-        menuItems: [{id: 'home', title: 'N'}, 
-                    {id: 'abouts', title: 'About'}, 
-                    {id: 'tools', title: 'Projects'}, 
+        menuItems: [{id: 'home', title: 'N'},
+                    {id: 'abouts', title: 'About'},
+                    {id: 'tools', title: 'Projects'},
                     {id: 'education', title: 'Education'},
                     {id: 'contacts', title: 'Contact'}]
       }
     },
 
     methods: {
+
       navClick(event) {
         const navButton1 = document.querySelector('button[aria-expanded]');
         navButton1.setAttribute('aria-expanded', false);
@@ -43,12 +46,13 @@
         this.$emit('nav-click', event);
         this.scrollTop()
       },
+
       toggleNav({ target }) {
         const navButton = document.querySelector('button[aria-expanded]');
-        console.log(target);
         const expanded = target.getAttribute('aria-expanded') === 'true' || false;
         navButton.setAttribute('aria-expanded', !expanded);
       },
+
       scrollTop () {
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
@@ -68,10 +72,9 @@
 
   .menu {
     position: -webkit-sticky;
-    position: sticky; 
+    position: sticky;
     top: 0;
     z-index: 100;
-    /* background: linear-gradient(to right, var(--orange), var(--blue)); */
   }
 
   .menu ul {

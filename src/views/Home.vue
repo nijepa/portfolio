@@ -15,12 +15,15 @@
       <transition name="slide-fade">
         <about-me v-if="about" />
       </transition>
+
       <transition name="slide-fade">
         <projects v-if="project" />
       </transition>
+
       <transition name="slide-fade">
         <education v-if="education" />
       </transition>
+      
       <transition name="slide-fade">
         <touch v-if="contact" />
       </transition>
@@ -74,7 +77,7 @@
       },
 
       handleNav(event) {
-        console.log(event.target.id)
+        //console.log(event.target.id)
         switch (event.target.id) {
           case 'home':
             this.clearViews();
@@ -106,16 +109,19 @@
         this.contact = false;
       },
       
-      handleWheel() {
-        window.addEventListener('wheel', function(event) {
+/*       handleWheel() {
+        window.addEventListener('wheel', (event) => {
             if (event.deltaY < 0) {
                 console.log("scrolling up")
+                this.started = true;
+                this.contact = true;
             } else if (event.deltaY > 0) {
                 console.log("scrolling down")
-                this.handleStart
+                this.started = true;
+                this.about = true;
             }
         })
-      }
+      } */
     }
   }
 </script>

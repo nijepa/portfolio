@@ -1,12 +1,13 @@
 <template>
-<!-- <transition name="slide-fade"> -->
   <div class="pro">
-
+  
 <!-- PROJECT DESCRIPTION -->
     <h2 id="about"> {{title}} </h2>
-    <section class="about" >
+
+    <section class="about">
+
       <transition name="left">
-        <div :key="currentProjectData.name" class="about__details" v-on:load="onApeared" v-show="apeared">
+        <div class="about__details" v-on:load="onApeared" v-show="apeared">
           <h3>{{currentProjectData.name}}</h3>
           <p>{{currentProjectData.title}}</p>
           <p>{{currentProjectData.desc}}</p>
@@ -17,14 +18,14 @@
           <div class="tools__used">
             <div v-for="tool in currentProjectData.tools" :key="tool">
               <img :src="getSvgUrl(tool)" alt="o" class="tool">
-            </div>
+            </div>  
           </div>
           <div class="btns">
-            <a class="lin links" :href="currentProjectData.online" target="_blank">Demo →
-              <img :src="getImgUrl('live-event')" alt="">
+            <a class="lin links" :href="currentProjectData.online" target="_blank">Demo → 
+              <img :src="getImgUrl('live-event')">
             </a>
-            <a class="lin links" :href="currentProjectData.source" target="_blank">Source →
-              <img :src="getSvgUrl('github-octocat')" alt="">
+            <a class="lin links" :href="currentProjectData.source" target="_blank">Source → 
+              <img :src="getSvgUrl('github-octocat')">
             </a>
           </div>
         </div>
@@ -32,10 +33,10 @@
 <!-- END PROJECT DESCRIPTION -->
 
 <!-- SLIDES -->
-      <transition name="right">
-        <div class="slides" v-on:load="onApeared" v-show="apeared">
-          <svg @click="changeSlide('left')"
-                :class="togglePrevArrow === true ? '' : 'toggle_prev__arrow'"
+        <transition name="right">
+        <div class="slides" :class="slideZoomed ? 'slide__zoomed' : ''" v-on:load="onApeared" v-show="apeared">
+          <svg @click="changeSlide('left')" 
+                :class="togglePrevArrow === true ? '' : 'toggle_prev__arrow'" 
                 id="left" class="arrow" viewBox="0 0 408.759 408.759" y="0px" x="0px">
             <g transform="matrix(-1,0,0,1,408.759,0)" id="g150">
               <path   id="path138"  d="M 204.383,408.759 C 146.262,408.759 90.709,383.891 51.966,340.532 18.46,303.057 0.005,254.703 0.005,204.379 0.005,91.683 91.688,0 204.383,0 c 50.319,0 98.674,18.453 136.164,51.964 43.346,38.761 68.207,94.315 68.207,152.415 10e-4,112.695 -91.68,204.38 -204.371,204.38"
@@ -48,13 +49,13 @@
               style="fill:#ffffff" />
             </g>
           </svg>
-          <img :class="newSlide === true ? 'new__slide' : ''"
-                :src="getImgUrl(currentProjectData.image + currentSlide) "
-                :alt="currentProjectData.image"
+          <img @click="zoomSlide" :class="newSlide === true ? 'new__slide' : ''"  
+                :src="getImgUrl(currentProjectData.image + currentSlide) " 
+                :alt="currentProjectData.image" 
                 class="about__mockup"
                 >
-          <svg @click="changeSlide('right')"
-                :class="toggleNextArrow === true ? '' : 'toggle_next__arrow'"
+          <svg @click="changeSlide('right')" 
+                :class="toggleNextArrow === true ? '' : 'toggle_next__arrow'" 
                 id="right" class="arrow" viewBox="0 0 408.759 408.759" x="0px" y="0px">
             <g>
               <path style="fill:#FFBE00;" d="M204.383,408.759c-58.121,0-113.674-24.868-152.417-68.227
@@ -108,85 +109,77 @@
                 C305.004,54.869,257.483,30.999,204.383,30.999"/>
               <path d="M264.724,198.306l-99.76,99.76l75.851,75.853c49.29-10.531,90.811-42.031,114.801-84.71
                 l-84.549-84.561"/>
-              <polyline style="fill:#FFFFFF;" points="171.307,304.405 155.751,288.847 239.949,204.648 155.751,120.45 171.307,104.892
+              <polyline style="fill:#FFFFFF;" points="171.307,304.405 155.751,288.847 239.949,204.648 155.751,120.45 171.307,104.892 
                 271.061,204.648 171.307,304.405 "/>
             </g>
           </svg>
         </div>
-      </transition>
+        </transition>
     </section>
 <!-- END SLIDES -->
 
 <!-- GALLERY -->
     <h3 class="projects__title">[ Some projects ]</h3>
-
-    <section class="gallery" id="gallery">
-      <div class="img__wrap"
-          :class="curProject.image === currentProject ? 'currentProject selected' : ''"
-          v-for="curProject in projectsData" :key="curProject.id">
+    <section class="gallery" id="gallery" >
+      <div class="img__wrap" 
+          :class="curProject.image == currentProject ? 'currentProject selected' : ''" 
+          v-for="curProject in projectData" :key="curProject.id">
         <!-- <img class="img__img" :src="require('../assets/images/' + curProject.image + '.png')" alt=""> -->
-        <transition name="rise">
-          <img class="img__img" :src="getImgUrl(curProject.image)" v-bind:alt="curProject.image"
-                v-on:load="onApeared" v-show="apeared">
-        </transition>
-
+        <img class="img__img" :src="getImgUrl(curProject.image)" v-bind:alt="curProject.image">
         <div class="middle">
-          <transition name="fall">
-            <div class="img__description" @click="selectProject(curProject.image)"
-                  v-on:load="onApeared" v-show="apeared">More ... &#10155;</div>
-          </transition>
-          <transition name="bounced">
-            <p v-on:load="onApeared" v-show="apeared">{{ curProject.name }}</p>
-          </transition>
+          <div class="img__description" @click="selectProject(curProject.image)">More ... &#10155;</div>
+          <p>{{ curProject.name }}</p>
         </div>
       </div>
     </section>
-
 <!-- END GALLERY -->
 
   </div>
-  <!-- </transition> -->
 </template>
 
 <script>
+
+  import firebase from '../Firebase'
+
   export default {
 
     name: 'Projects',
 
     data() {
       return {
+        ref: firebase.firestore().collection('projects'),
         title: '< PROJECTS />',
         imagesFolder: './assets/images/',
-        projectsData :
-          [{name: 'Studio 88',
-            title: 'App for managing sport club for pilates',
-            image: 'studio88',
-            desc: 'Tracking clients, trainings, attendances, payments, expenses...',
-            features: ["Tracking clients and their status",
-                        'Creating training groups',
-                        'Entering payments and expenses',
-                        'Data saved in MongoDB',
+        projectData: [],
+        projectsData : 
+          [{name: 'ToDo list', 
+            title: 'ToDo list made with Vue', 
+            image: 'todolistvue',
+            desc: 'Enter projects and for them enter tasks.',
+            features: ["Tracking tasks and their status",
+                        'Changing status wihout reloading',
+                        'Data saved in local storage',
                         'Responsive design'],
-            online: 'https://nijepa.github.io/studio88_frontend/',
-            source: 'https://github.com/nijepa/studio88_frontend',
-            tools: ['vue', 'js', 'css3', 'nodejs', 'mongodb'],
-            images: ['1', '2', '3', '4', '5', '6']
+            online: 'https://nijepa.github.io/todo-list-vue/',
+            source: 'https://github.com/nijepa/todo-list-vue',
+            tools: ['vue', 'js', 'css3'],
+            images: ['1', '2', '3']
           },
-          {name: 'Odin-book',
-            title: 'Simple Facebook clone',
-            image: 'odinbook',
-            desc: 'App for creating posts, meeting and connecting with other people. Frontend made with Vue.js with Node.js and MongoDB as backend.',
-            features: ['Authentication control',
-                        'JWT token for persistent login',
-                        'Like functionality for posts and comments',
+          {name: 'Weather app', 
+            title: 'Weather app made with Vue', 
+            image: 'weatherapp',
+            desc: 'Enter a location and it will fetch the weather data from a weather API (openweathermap.org) and a photo of (if availabile) for found location from another API (teleport.org).',
+            features: ['Fetch new data for a new location without reloading',
+                        'Error handling for different HTTP status codes',
+                        'Fetch location photo from another API',
                         'Responsive design'],
-            online: 'https://nijepa.github.io/odinbook-frontend/',
-            source: 'https://github.com/nijepa/odinbook-frontend',
-            tools: ['vue', 'js', 'css3', 'nodejs', 'mongodb'],
-            images: ['1', '2', '3', '4', '5']
+            online: 'https://nijepa.github.io/weather-app/',
+            source: 'https://github.com/nijepa/weather-app',
+            tools: ['vue', 'js', 'css3'],
+            images: ['1', '2', '3']
           },
-          {name: "Where's Waldo game",
-            title: "Where's Waldo made with Vue",
+          {name: "Where's Waldo game", 
+            title: "Where's Waldo made with Vue", 
             image: 'whereswaldo',
             desc: 'Chose a photo from 3 of them and try to find hidden character between many of characters.',
             features: ['A photo tagging app',
@@ -198,8 +191,8 @@
             tools: ['vue', 'js', 'css3', 'firebase'],
             images: ['1', '2', '3']
           },
-          {name: 'Laravel-VUE',
-            title: 'Bussiness app made with VUE and Laravel',
+          {name: 'Laravel-VUE', 
+            title: 'Bussiness app made with VUE and Laravel', 
             image: 'laravel-vue',
             desc: 'App for managing meetings and projects, and presentation site with CMS.',
             features: ['SPA app on top of API',
@@ -211,8 +204,8 @@
             tools: ['vue', 'js', 'css3', 'sass', 'laravel', 'mysql'],
             images: ['1', '2', '3', '4', '5', '6']
           },
-          {name: 'Battleship game',
-            title: 'Battleship game made with Vue',
+          {name: 'Battleship game', 
+            title: 'Battleship game made with Vue', 
             image: 'battleship',
             desc: 'Battleship game, player Vs AI.',
             features: ['Simple AI for oponent',
@@ -224,8 +217,8 @@
             tools: ['vue', 'js', 'css3'],
             images: ['1', '2']
           },
-          {name: 'ZDE site',
-            title: 'Web site made with JS and PHP',
+          {name: 'ZDE site', 
+            title: 'Web site made with JS and PHP', 
             image: 'zde',
             desc: 'Promotion and offering servicies CMS',
             features: ['Front with ordering servicies',
@@ -237,8 +230,8 @@
             tools: ['js', 'css3', 'php', 'mysql'],
             images: ['1', '2', '3']
           },
-          {name: 'Jot',
-            title: 'From Udemy course Vue & Laravel',
+          {name: 'Jot', 
+            title: 'From Udemy course Vue & Laravel', 
             image: 'jot',
             desc: 'Tracking of birthdays',
             features: ['Front styles with tallwindcss',
@@ -256,10 +249,9 @@
         newSlide: false,
         currentSlide: 1,
         slide: false,
-        apeared: false,
-        currentProjectData:
-          {name: 'Laravel-VUE',
-            title: 'Bussiness app made with VUE and Laravel',
+        currentProjectData: 
+          {name: 'Laravel-VUE', 
+            title: 'Bussiness app made with VUE and Laravel', 
             image: 'laravel-vue',
             desc: 'App for managing meetings and projects, and presentation site with CMS.',
             features: ['SPA app on top of API',
@@ -270,14 +262,36 @@
             source: 'https://github.com/nijepa/laravel-vue',
             tools: ['vue', 'js', 'css3', 'sass', 'laravel', 'mysql'],
             images: ['1', '2', '3', '4', '5', '6']
-          }
+          },
+        slideZoomed: false,
+        apeared: false
       }
     },
-
+    
+    created() {
+      this.ref.onSnapshot((querySnapshot) => {
+        this.projectData = [];
+        querySnapshot.forEach((doc) => {
+          this.projectData.push({
+            key: doc.id,
+            name: doc.data().name,
+            title: doc.data().title,
+            image: doc.data().image,
+            online: doc.data().name,
+            source: doc.data().source,
+            tools: doc.data().tools,
+            images: doc.data().images,
+          });
+        });
+      });
+    }
+,
     methods: {
+
       getImgUrl(pic) {
         return require('../assets/images/' + pic + '.png')
       },
+
       getSvgUrl(pic) {
         return require('../assets/images/' + pic + '.svg')
       },
@@ -285,19 +299,20 @@
       selectProject(project) {
         this.currentProject = project;
         this.currentProjectData = this.projectsData.find(this.checkProject);
-        this.initArrows();
         this.currentSlide = 1;
         this.newSlide = true;
-        this.checkArrows('left');
+        window.scrollTo(0,0);
         setTimeout(() => this.newSlide = false, 1000);
+        this.initArrows();
       },
-
+      
       checkProject(image) {
         return image.image === this.currentProject;
       },
 
       initArrows() {
         if (this.currentProjectData.images.length > 1) {
+          this.togglePrevArrow = false;
           return this.toggleNextArrow = true;
         }
         this.toggleNextArrow = false;
@@ -307,7 +322,7 @@
       checkArrows(direction) {
         if (direction === 'right') {
           this.currentSlide === this.currentProjectData.images.length ?
-                                this.toggleNextArrow = false :
+                                this.toggleNextArrow = false : 
                                 this.togglePrevArrow = true;
           if (this.currentProjectData.images.length > 1 ) {
             this.togglePrevArrow = true;
@@ -336,7 +351,11 @@
             this.checkArrows(direction);
             setTimeout(() => this.newSlide = false, 600);
           }
-        }
+        } 
+      },
+
+      zoomSlide() {
+        this.slideZoomed = !this.slideZoomed;
       },
 
       onApeared() {
@@ -393,7 +412,7 @@
     height: 50px;
     margin-right: 10px;
     vertical-align: middle
-  }
+  } 
 
   .btns a {
     text-decoration: none;
@@ -431,7 +450,7 @@
     outline-style: none;
     outline-width: 0em;
   }
-
+  
 /* Slides section */
 
   .slides {
@@ -439,18 +458,19 @@
     grid-gap: 1rem;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
+    transition: all .6s ease-in-out;
   }
 
   .toggle_next__arrow {
     visibility: hidden;
     transform: scale(.6);
-    transition: all .6s ease-in-out;
+    transition: ease-in-out .6s all;
   }
 
   .toggle_prev__arrow {
     visibility: hidden;
     transform: scale(.6);
-    transition: all .6s ease-in-out;
+    transition: ease-in-out .6s all;
   }
 
   .arrow {
@@ -474,14 +494,25 @@
     animation-duration: .6s;
   }
 
-/*  @keyframes example {
-    0%   {transform: scale(.3);}
-    100% {transform: scale(1);}
-  }*/
+  .slide__zoomed {
+    /* position: fixed;  */
+    box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.75);
+/*     align-self: last baseline;
+    justify-self: end; */
+
+    background: white;
+    transform: scale(1.25);
+    /* height: 100vh; */
+    /* width: 70%; */
+  }
+
+  .about__mockup {
+    cursor: nesw-resize;
+  }
 
   @keyframes example {
-    0%   {transform: rotateX(180deg) rotateY(30deg);}
-    100% {transform: rotateX(0) rotateY(0deg);}
+    0%   {transform: scale(.3);}
+    100% {transform: scale(1);}
   }
 
 /* Gallery section */
@@ -505,7 +536,6 @@
     display: block;
     content: '';
     height: 10px;
-    /* background: linear-gradient(to var(--direction, left), var(--yellow), transparent); */
     -webkit-box-shadow: 9px -9px 9px -7px rgba(0,0,0,0.75);
     -moz-box-shadow: 9px -9px 9px -7px rgba(0,0,0,0.75);
     box-shadow: 9px -9px 9px -7px rgba(0,0,0,0.75);
@@ -513,7 +543,6 @@
 
   .gallery img {
     width: 100%;
-    /* cursor: pointer; */
     border-radius: 5%;
   }
 
@@ -564,7 +593,6 @@
 
   .middle p {
     background: #ffb515;
-    color: var(--black);
   }
 
   .currentProject .img__description {
@@ -581,16 +609,15 @@
   }
 
   .currentProject .middle p {
-    transform-origin:0% 0%;
     transform: scale(1.2) rotate(-25deg);
-    transition: all .5s ease-in-out;
+    transition: all .5s ease;
   }
 
   .img__description {
     font-family: 'Ubuntu', sans-serif;
     text-transform: uppercase;
-/*    background-color: #4CAF50;
-    padding: 16px 32px;*/
+    background-color: #4CAF50;
+    padding: 16px 32px;
     background: #00aeff;
     border: 0;
     padding: 10px 20px;
@@ -599,20 +626,16 @@
     box-shadow: -9px -9px 9px -7px rgba(0,0,0,0.75);
     border-radius: 0 0 5px 0;
     cursor: pointer;
-    transform: rotate(13deg) ;
-    transform-origin:0% 0%;
     transition: all ease-in-out 0.2s;
     font-size: 16px;
-    /* transition: opacity .2s, visibility .2s; */
   }
 
-  .img__description:hover {
+  .img__description:hover, .img__description:active {
     background: var(--orange);
     -webkit-box-shadow: 9px 9px 9px -7px rgba(0,0,0,0.75);
     -moz-box-shadow: 9px 9px 9px -7px rgba(0,0,0,0.75);
     box-shadow: 9px 9px 9px -7px rgba(0,0,0,0.75);
-    transform: rotate(0deg);
-    /* transform: skewY(-3deg) skewX(3deg); */
+    transform: skewY(-3deg) skewX(3deg);
     color: #000000;
     border-radius: 5px 0 0 0;
   }
