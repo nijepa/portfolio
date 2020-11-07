@@ -222,7 +222,7 @@
       },
 
       readFile() {
-        window.open('../assets/images/CV-English2020-2.pdf', '_blank') //to open in new tab
+        window.open('../assets/images/CV-English2020-web.pdf', '_blank') //to open in new tab
       },
 
       toggleImage() {
