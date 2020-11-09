@@ -145,6 +145,8 @@
   .contact p,a {
     margin: 0;
     padding: 0;
+    color: var(--blue);
+    transition: 1s ease all;
   }
 
   .contact a {

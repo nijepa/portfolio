@@ -33,7 +33,7 @@
       color: #0360b6;
     }
     a:visited {
-      // color: var(--blue);
+      //color: var(--blue);
     }
     a:hover {
       color: #a52607
@@ -77,10 +77,9 @@
 
   .fader-enter, .fader-leave-to {
     opacity: 0;
-    // width: 0;
-    // height: 0;
-    transform: rotateZ(90deg) rotateY(90deg) rotateX(90deg);
-    // transform: rotateY(90deg);
+    width: 0;
+    height: 0;
+    //transform: rotateZ(90deg) rotateY(90deg) rotateX(90deg);
   }
 
   .fall-enter-active {
@@ -218,4 +217,5 @@
       transform: skew(0deg) translateX(0) translateY(0);
     }
   }
+
 </style>

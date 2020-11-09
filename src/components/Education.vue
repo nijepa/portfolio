@@ -9,9 +9,10 @@
           <h1>The Odin Project</h1>
         </a>
         <transition name="fall">
-          <div class="course__white" v-on:load="onApeared" v-show="apeared">
+          <a class="course__white" v-on:load="onApeared" v-show="apeared"
+                href="https://www.theodinproject.com" target="_blank">
             <img class="course__img odin" :src="getSvgUrl('odin-logo')" alt="Yummy Taco" >
-          </div>
+          </a>
         </transition>
         <div class="course__text">
           <p class="">
@@ -42,7 +43,7 @@
           </p>
           <p>From the many courses Udemy offers, i took
             <a href="https://www.udemy.com/course/laravel-api-development-vue-js-spa-from-scratch/learn/lecture/15413190?start=0#overview"
-               target="_blank">Laravel API Development & Vue JS SPA from Scratch
+                target="_blank">Laravel API Development & Vue JS SPA from Scratch
             </a> .
           </p>
           <p>It was learning how to develop the required API to power a simple address book project named
@@ -55,9 +56,11 @@
           <p>From the back-end part, it was RESTful API Development with Laravel.</p>
           <p>It was 5 and a half hours and 50 lessons long journey that left me nice small project and make more hunger for more knowledge.</p>
         </div>
-        <transition name="rise">
-          <img style="display: block;" class="course__img" :src="getSvgUrl('udemy-logo')" alt="Yummy Taco"
-               v-on:load="onApeared" v-show="apeared">
+        <transition name="rise" >
+          <a class="" href="https://www.udemy.com" target="_blank">
+            <img style="display: block;" class="course__img" :src="getSvgUrl('udemy-logo')" alt="Yummy Taco"
+                  v-on:load="onApeared" v-show="apeared">
+          </a>
         </transition>
       </div>
     </transition>
@@ -67,7 +70,9 @@
         <a href="https://www.freecodecamp.org/" target="_blank" class="course">
           <h1>freeCodeCamp</h1>
         </a>
-        <img style="display: block;" class="course__img" :src="getSvgUrl('freecodecamp-logo')" alt="Yummy Taco" >
+        <a href="https://www.freecodecamp.org/" target="_blank">
+          <img style="display: block;" class="course__img" :src="getSvgUrl('freecodecamp-logo')" alt="Yummy Taco" >
+        </a>
         <div class="course__text">
           <p class="">
             <a href="https://www.freecodecamp.org/" target="_blank"> freeCodeCamp
@@ -76,7 +81,7 @@
           <p>I learn to code by completing coding challenges and building projects.</p>
           <p>Also I earned couple of verified certifications along the way,
             <a href="https://www.freecodecamp.org/certification/fcce8b7e137-31ae-4bb5-915f-a76095b3ad2d/responsive-web-design"
-               target="_blank"> Responsive Web Design
+                target="_blank"> Responsive Web Design
             </a> and JavaScript Algorithms and Data Structures.
           </p>
           <p>Each certification takes around 300 hours of dedicated learning.</p>
@@ -166,7 +171,9 @@
     grid-template-areas: "title title"
                           "desc image";
     margin-top: 20px;
-    background-color: rgba(255, 255, 255, 0.9);
+    /* background-color: rgba(255, 255, 255, 0.7); */
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.7), transparent);
+    border-top-left-radius: .3em;
   }
 
   .edu1 {
@@ -177,7 +184,9 @@
     grid-template-areas: "title title"
                           "image desc";
     margin-top: 20px;
-    background-color: rgba(255, 255, 255, 0.9);
+    /* background-color: rgba(255, 255, 255, 0.7); */
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.7), transparent);
+    border-top-right-radius: .3em;
   }
 
   .course {
@@ -191,17 +200,23 @@
     height: 70px;
     align-self: center;
     margin-right: 5px;
+    cursor: pointer;
+    transition: 1s ease all;
+  }
+
+  .course__img:hover {
+    transform: scale(1.1);
   }
 
   .course__text {
     grid-area: desc;
     padding: 10px;
-    background-color: rgba(255, 255, 255, 0.5);
+    /* background-color: rgba(255, 255, 255, 0.5); */
   }
 
   .course__white {
     grid-area: image;
-    background-color: rgba(255, 255, 255, 0.9);
+    /* background-color: rgba(255, 255, 255, 0.9); */
   }
 
   .odin {

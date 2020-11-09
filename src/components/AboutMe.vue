@@ -4,7 +4,7 @@
     <div class="top">
 
       <header class="hero">
-        <transition name="bounce" mode="out-in">
+        <transition name="fader" mode="out-in">
 <!--          <img id="avatar" alt="" :src="photoType ? photo : avatar"-->
 <!--                @mouseover="photoType = true" @mouseout="photoType = false" @click="photoType = !photoType"-->
 <!--                v-on:load="onApeared" v-show="apeared">-->
@@ -189,7 +189,7 @@
         <div class="feature" v-on:load="onApeared" v-show="apeared">
           <h3 > Free <span class="back">time</span></h3>
           <p> spend traveling with family, listening to music, walking or
-              playing with doughter and little schnauzer.</p>
+              playing with daughter and little schnauzer.</p>
         </div>
       </transition>
     </section>
@@ -255,11 +255,11 @@
   .hero {
     grid-area: hero;
     min-height: 380px;
-    background: white url(../assets/images/hero.png);
+    background: url(../assets/images/hero.png), linear-gradient(to bottom right, rgba(255, 255, 255, 0.7), transparent);
     background-size: cover;
     background-position: top left;
     justify-content: space-around;
-
+    border-top-left-radius: .3em;
     align-items: start;
     display: grid;
  /*    grid-gap: 17px; */
@@ -293,6 +293,7 @@
     background: transparent;
     justify-self: center;
     cursor: pointer;
+    animation-delay: 5s;
     /* border: 2px solid var(--yellow); */
   }
 
@@ -424,11 +425,20 @@
   }
 
   .feature {
-    background: white;
+    /* background: white; */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), transparent);
     padding: 20px;
-    border: 1px solid white;
+    /* border: 1px solid white; */
     text-align: center;
-    box-shadow: 0 0  4px rgba(0,0,0,0.1);
+    /* box-shadow: 0 0  4px rgba(0,0,0,0.1); */
+  }
+
+  .feature:first-child {
+    border-top-left-radius: .3em;
+  }
+
+  .feature:last-child {
+    border-top-right-radius: .3em;
   }
 
   .feature .icon {

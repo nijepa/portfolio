@@ -356,7 +356,9 @@
 /* About section */
 
   .about {
-    background: white;
+    /* background: white; */
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.7), transparent);
+    border-top-left-radius: .3em;
     padding: 30px;
     display: grid;
     grid-template-columns: auto auto;
