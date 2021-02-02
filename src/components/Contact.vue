@@ -270,16 +270,20 @@
     color: var(--yellow);
     transform: scale(0.9);
   }
+  #create:hover .send {
+    fill: var(--yellow);
+  }
 
   .send {
     width: 35px;
     align-self: center;
+    transition: ease-in-out .6s all;
   }
 
-  .send:hover {
+/*   .send:hover {
     width: 35px;
     fill: var(--yellow);
-  }
+  } */
 
   .email {
     justify-self: left;

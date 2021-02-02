@@ -42,7 +42,7 @@
             </a> is global marketplace for learning and instruction.
           </p>
           <p>From the many courses Udemy offers, i took
-            <a href="https://www.udemy.com/course/laravel-api-development-vue-js-spa-from-scratch/learn/lecture/15413190?start=0#overview"
+            <a href="https://www.udemy.com/certificate/UC-b09514c8-db37-4a92-9acc-3322601b79da/"
                 target="_blank">Laravel API Development & Vue JS SPA from Scratch
             </a> .
           </p>

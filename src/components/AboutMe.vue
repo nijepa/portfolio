@@ -24,7 +24,7 @@
         <h3 class="me_myself_and_i line-1 anim-typewriter">Full Stack Web Developer</h3>
 
         <transition name="bounce">
-          <a class="pdf__link" href="/CV-English2020-web.pdf" download v-on:load="onApeared" v-show="apeared">
+          <a class="pdf__link" href="/CV-English2021.pdf" download v-on:load="onApeared" v-show="apeared">
             <button id="textme"> Portfolio <img id="pdf" src="@/assets/images/pdf.svg">
             </button>
           </a>
