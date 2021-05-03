@@ -82,6 +82,12 @@
     transition: all .7s ease-in-out;
   }
 
+  @media (max-width: 682px) {
+    footer svg {
+      width: 40px;
+    }
+  }
+
   .linked__in {
     justify-self: right;
   }

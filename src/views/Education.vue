@@ -17,16 +17,16 @@
         <div class="course__text">
           <p class="">
             <a href="https://www.theodinproject.com" target="_blank"> The Odin Project
-            </a> is where my web development education currently is.
+            </a> is read, search, read more, build, type of education.
           </p>
           <p>It's an open source full-stack curriculum that covers from the very basics like setting up your local development environment, to building and deploying a GitHub clone.</p>
           <p>It has a hands-on approach where learning by making is the main idea, reinforcing every bit of the plentiful theory it offers.</p>
-          <p>I went through the  3/5 of curriculum in two months, almost every day, learning the in and outs of web development.</p>
+          <p>I went through the whole curriculum in four months, almost every day, learning the in and outs of web development.</p>
           <p>Till now I build all the required projects, which You can look at my
             <a href="https://github.com/nijepa?tab=projects" target="_blank"> GitHub repositories
             </a>.
           </p>
-          <p>My wish is to finish it in one more month, to round my knowledge as a full-stack developer.</p>
+          <p>It was great polygon to round my knowledge as a full-stack developer.</p>
         </div>
       </div>
     </transition>

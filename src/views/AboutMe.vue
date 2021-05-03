@@ -25,7 +25,10 @@
 
         <transition name="bounce">
           <a class="pdf__link" href="/CV-English2021.pdf" download v-on:load="onApeared" v-show="apeared">
-            <button id="textme"> Portfolio <img id="pdf" src="@/assets/images/pdf.svg">
+            <button id="textme"> 
+              <div class="textme__content">
+                Portfolio <img id="pdf" src="@/assets/images/pdf.svg">
+              </div> 
             </button>
           </a>
         </transition>
@@ -320,8 +323,12 @@
     text-decoration:none;
   }
 
-  .cta a .link__back {
-    color: var(--yel);
+  .link__back {
+    color: var(--orange) !important;
+  }
+
+  .link__back:hover {
+    color: var(--red) !important;
   }
 
   .link__back:visited {
@@ -395,6 +402,11 @@
     grid-area: 1 / 2 / 3 / 3;
     align-self: center;
     justify-self: right;
+  }
+
+  .textme__content {
+    transform: rotate(-9deg);
+    transition: all .3s ease;
   }
 
   svg {
