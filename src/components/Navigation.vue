@@ -2,9 +2,12 @@
   <nav class="menu">
 
     <button aria-expanded="false" aria-controls="menu-list" @click="toggleNav">
-      <span class="open">☰</span>
-      <span class="close">×</span>
-      Menu
+      <div class="textme__content">
+        <span class="open">☰</span>
+        <span class="close">×</span>
+        Menu
+      </div>
+      
     </button>
 
     <ul id="menu-list" >
@@ -28,12 +31,12 @@
 
     data() {
       return {
-        activeLink: 'abouts',
-        menuItems: [{id: 'home', title: 'N'},
-                    {id: 'abouts', title: 'About'},
-                    {id: 'tools', title: 'Projects'},
+        activeLink: 'aboutme',
+        menuItems: [{id: '', title: 'N'},
+                    {id: 'aboutme', title: 'About'},
+                    {id: 'projects', title: 'Projects'},
                     {id: 'education', title: 'Education'},
-                    {id: 'contacts', title: 'Contact'}]
+                    {id: 'contact', title: 'Contact'}]
       }
     },
 
@@ -43,8 +46,10 @@
         const navButton1 = document.querySelector('button[aria-expanded]');
         navButton1.setAttribute('aria-expanded', false);
         this.activeLink = event.target.id;
-        this.$emit('nav-click', event);
-        this.scrollTop()
+        //this.$emit('nav-click', event);
+        //console.log(event)
+        this.$router.push('/'+event.target.id);
+        this.scrollTop();
       },
 
       toggleNav({ target }) {

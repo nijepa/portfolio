@@ -4,17 +4,18 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div> -->
-    <home />
+    <router-view />
+    <!-- <home /> -->
   </div>
 </template>
 
 <script>
-  import Home from '@/views/Home.vue'
+  //import Home from '@/views/Home.vue'
 
   export default {
 
     components: {
-      Home
+      //Home
     }
 
   }
@@ -57,19 +58,21 @@
   }
 
   .slide-fade-enter-active {
-    transition: all .7s ease;
+    transition: all .9s ease;
   }
   .slide-fade-leave-active {
-    // transition: ease .7s all;
-    //  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+    transition: ease .9s all;
+    transform: rotateY(-90deg);
+      //transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
   }
   .slide-fade-enter, .slide-fade-leave-to
   /* .slide-fade-leave-active below version 2.1.8 */ {
-    // transform: translateX(10px);
-    transform: scale(.7);
-    /*filter: brightness(.7);*/
+     //transform: translateX(10px);
+    transform: rotateY(90deg);
+    //filter: brightness(.7);
     opacity: 0;
   }
+
 
   .fader-enter-active {
     transition: all 5s ease;

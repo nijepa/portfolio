@@ -21,7 +21,7 @@ button {
   max-width: 125px;
 /*   writing-mode: vertical-rl;
   text-orientation: upright; */
-  transform: rotate(13deg) ;
+  transform: rotate(9deg) ;
   transform-origin: 0% 0%;
   transition: all ease-in-out 0.2s;
   
@@ -38,7 +38,10 @@ button:hover, button:active {
   /* transform: skewY(0deg) skewX(0deg); */
   color: #000000;
   border-radius: 0 0 5px 0;
-  
+}
+
+button:hover .textme__content {
+  transform: rotate(0);
 }
 
 button:focus {
@@ -64,7 +67,7 @@ h2:before, h2:after {
   display: block;
   content: '';
   height: 10px;
-  background: linear-gradient(to var(--direction, left), var(--yellow), transparent); 
+  background: linear-gradient( var(--direction, left), var(--yellow), transparent); 
   -webkit-box-shadow: 9px -9px 9px -7px rgba(0,0,0,0.75);
   -moz-box-shadow: 9px -9px 9px -7px rgba(0,0,0,0.75);
   box-shadow: 9px -9px 9px -7px rgba(0,0,0,0.75);
@@ -139,6 +142,7 @@ h2:after {
     grid-template-areas: 
     "hero hero"
     "cta1 cta2"
+    !important
   }
   .about {
     grid-template-columns: 1fr;
@@ -165,6 +169,7 @@ h2:after {
     "hero"
     "cta1" 
     "cta2"
+    !important
   }
   .gallery {
     grid-template-columns: 1fr;
