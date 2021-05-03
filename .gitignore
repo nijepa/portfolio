@@ -5,7 +5,7 @@ node_modules
 /src/assets/css/old
 /src/components/old
 <<<<<<< HEAD
-/dist
+#/dist
 =======
 
 >>>>>>> withrouter
