@@ -25,7 +25,8 @@
                 <h1 id="myname">Nikola Pavićević</h1>
                 <h3>Full Stack Web Developer</h3>
               </div>
-              <a id="down" @click="startApp" href="">More</a>
+              <router-link id="down" tag="a" to="/aboutme">More</router-link>
+              <!-- <a id="down" @click="startApp" href="">More</a> -->
               <!-- <button class="btn btn-primary btn-sm" @click.prevent="playSound(getAudioUrl('1976_Tommy_McCook_Prophets_Death_Trap'))">
                 <span class="fa fa-play-circle-o">tzuttrz</span>
               </button> -->
