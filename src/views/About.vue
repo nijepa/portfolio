@@ -1,14 +1,12 @@
 <template>
   <div class="homez">
+    <Navigation @nav-click="handleNav" />
 
-      <Navigation @nav-click="handleNav" />
-    
     <transition name="slide-fade" mode="out-in">
       <router-view />
     </transition>
-    
-      <Footer />
 
+    <Footer />
   </div>
 </template>
 
@@ -26,31 +24,13 @@ export default {
 
   methods: {
     handleNav(event) {
-      //console.log(event.target.id)
-      this.$router('/'+event.target.id)
-/*       switch (event.target.id) {
-        case "home":
-          this.clearViews();
-          this.started = false;
-          break;
-        case "abouts":
-          this.clearViews();
-          this.about = true;
-          break;
-        case "tools":
-          this.clearViews();
-          this.project = true;
-          break;
-        case "education":
-          this.clearViews();
-          this.education = true;
-          break;
-        case "contacts":
-          this.clearViews();
-          this.contact = true;
-          break;
-      } */
+      console.log(event.target.id)
+      this.$router("/" + event.target.id);
     },
   },
+
+  created() {
+    //this.$router.push('/aboutme');
+  }
 };
 </script>

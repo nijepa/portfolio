@@ -182,8 +182,8 @@ export default {
     },
 
     startApp() {
-      //this.$emit("start-app", true);
-      this.$router.push("/aboutme");
+      this.$emit("start-app", true);
+      //this.$router.push('/about');
     },
 
     play(audio) {

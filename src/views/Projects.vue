@@ -207,7 +207,6 @@
               <div class="textme__content">
                 More ... &#10155;
               </div>
-              
             </button>
           </transition>
           <transition name="bounced">
@@ -240,7 +239,7 @@ export default {
           features: [
             "Tracking clients and their status",
             "Creating training groups",
-            "Entering payments and expenses",
+            "Managing payments and expenses",
             "Data saved in MongoDB",
             "Responsive design",
           ],
@@ -268,6 +267,23 @@ export default {
           images: ["1", "2", "3", "4", "5"],
         },
         {
+          name: "VUE3 + Firebase",
+          title: "VUE3 - blog, music playlists, chat",
+          image: "vue3",
+          desc:
+            "Excersise for new Vue3 features.",
+          features: [
+            "CompositionAPI",
+            "Real time chat",
+            "Firebase authentication",
+            "Firestore for app data, storage for images",
+          ],
+          online: "https://dojo-blog-18aa1.web.app/",
+          source: "https://github.com/nijepa/vue3-firebase",
+          tools: ["vue", "js", "css3", "firebase"],
+          images: ["1", "2", "3", "4", "5"],
+        },
+/*         {
           name: "Where's Waldo game",
           title: "Where's Waldo made with Vue",
           image: "whereswaldo",
@@ -283,7 +299,7 @@ export default {
           source: "https://github.com/nijepa/wheres-waldo",
           tools: ["vue", "js", "css3", "firebase"],
           images: ["1", "2", "3"],
-        },
+        }, */
         {
           name: "Laravel-VUE",
           title: "Bussiness app made with VUE and Laravel",

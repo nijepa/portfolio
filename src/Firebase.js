@@ -7,7 +7,7 @@ const config = {
   authDomain: process.env.AUTH_DOMAIN,
   databaseURL: process.env.DATABASE_URL,
   projectId: "portfolio-7f86f",
-  storageBucket: "wheportfolio-7f86f.appspot.comre-is-wall-e.appspot.com"
+  storageBucket: process.env.STORAGE_BUCKET
 };
 
 firebase.initializeApp(config);
