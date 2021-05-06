@@ -356,7 +356,6 @@ label {
 
 .mail__sent h1 {
   font-size: 3rem;
-  /* rgb(74, 9, 139) */
   color: var(--blue) !important;
 }
 

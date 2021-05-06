@@ -5,19 +5,9 @@
 
       <header class="hero">
         <transition name="fader" mode="out-in">
-<!--          <img id="avatar" alt="" :src="photoType ? photo : avatar"-->
-<!--                @mouseover="photoType = true" @mouseout="photoType = false" @click="photoType = !photoType"-->
-<!--                v-on:load="onApeared" v-show="apeared">-->
-  <!--        <img :key="1" class="avatar" v-if="photoType === false" alt="" :src="require('@/assets/images/meavatar.png')"
-               @mouseover="photoType = true" @click="photoType = !photoType"
-               v-on:load="onApeared" v-show="apeared">-->
           <img class="avatar" alt="" :src="images[currentID]"
                 v-show="apeared"
               >
-
- <!--         <div class="avatar" v-bind:style="{'background-image': 'url(' + images[currentID] + ')'}"
-               v-bind:key="currentID" @click="mouseover">
-          </div>-->
         </transition>
 
         <h1 class="me_myself_and_i line-1 anim-typewriter">Nikola Pavićević</h1>
@@ -265,7 +255,6 @@
     border-top-left-radius: .3em;
     align-items: start;
     display: grid;
- /*    grid-gap: 17px; */
     grid-row-gap: 50px;
     grid-template-columns: auto auto;
     grid-template-rows: .1fr 1fr 1fr;
@@ -297,7 +286,6 @@
     justify-self: center;
     cursor: pointer;
     animation-delay: 5s;
-    /* border: 2px solid var(--yellow); */
   }
 
   .cta {
@@ -351,7 +339,6 @@
     max-width: 100%;
     width: 50px;
     height: 50px;
-    /* justify-self: left; */
   }
 
   .cta img:hover {
@@ -437,12 +424,9 @@
   }
 
   .feature {
-    /* background: white; */
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), transparent);
     padding: 20px;
-    /* border: 1px solid white; */
     text-align: center;
-    /* box-shadow: 0 0  4px rgba(0,0,0,0.1); */
   }
 
   .feature:first-child {
@@ -475,17 +459,9 @@
   }
 
   .line-1 {
-/*     position: relative;
-    top: 50%;
-    width: 24em;
-    margin: 0 auto;
-    border-right: 2px solid rgba(255,255,255,.75);
-    font-size: 180%;
-    text-align: center;  */
     white-space: nowrap;
     overflow: hidden;
     max-width: 175px;
-    /* transform: translateY(-50%);     */
   }
 
   /* Animation */
@@ -503,11 +479,4 @@
     from{border-right-color: rgba(255,255,255,.75);}
     to{border-right-color: transparent;}
   }
-
-  /* @media (max-width: 874px) {
-    .line-1{
-      white-space:normal;
-      overflow:visible;
-    }
-  } */
 </style>

@@ -1,6 +1,5 @@
 <template>
   <div class="homez">
-    
     <Navigation @nav-click="handleNav" />
 
     <transition name="slide-fade" mode="out-in">
@@ -25,13 +24,8 @@ export default {
 
   methods: {
     handleNav(event) {
-      console.log(event.target.id)
       this.$router("/" + event.target.id);
     },
   },
-
-  created() {
-    //this.$router.push('/aboutme');
-  }
 };
 </script>

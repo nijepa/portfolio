@@ -1,5 +1,4 @@
 <template>
-  <!-- <transition name="slide-fade"> -->
   <div class="pro">
     <!-- PROJECT DESCRIPTION -->
     <h2 id="about">{{ title }}</h2>
@@ -186,7 +185,6 @@
         v-for="curProject in projectsData"
         :key="curProject.id"
       >
-        <!-- <img class="img__img" :src="require('../assets/images/' + curProject.image + '.png')" alt=""> -->
         <transition name="rise">
           <img
             class="img__img"
@@ -218,7 +216,6 @@
 
     <!-- END GALLERY -->
   </div>
-  <!-- </transition> -->
 </template>
 
 <script>
@@ -489,7 +486,6 @@ export default {
 /* About section */
 
 .about {
-  /* background: white; */
   background: linear-gradient(to right, rgba(255, 255, 255, 0.7), transparent);
   border-top-left-radius: 0.3em;
   padding: 1em;
@@ -527,7 +523,6 @@ export default {
 svg {
   width: auto;
   height: 50px;
-  margin-right: 10px;
   vertical-align: middle;
 }
 
@@ -646,7 +641,6 @@ svg {
   display: block;
   content: "";
   height: 10px;
-  /* background: linear-gradient(to var(--direction, left), var(--yellow), transparent); */
   -webkit-box-shadow: 9px -9px 9px -7px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 9px -9px 9px -7px rgba(0, 0, 0, 0.75);
   box-shadow: 9px -9px 9px -7px rgba(0, 0, 0, 0.75);
@@ -654,7 +648,6 @@ svg {
 
 .gallery img {
   width: 100%;
-  /* cursor: pointer; */
   border-radius: 5%;
 }
 
@@ -708,7 +701,7 @@ svg {
 }
 
 .middle p {
-  background: #ffb515;
+  background: var(--orange);
   color: var(--black);
 }
 
@@ -734,8 +727,6 @@ svg {
 .img__description {
   font-family: "Ubuntu", sans-serif;
   text-transform: uppercase;
-  /*    background-color: #4CAF50;
-    padding: 16px 32px;*/
   background: #00aeff;
   border: 0;
   padding: 10px 20px;
@@ -748,7 +739,6 @@ svg {
   transform-origin: 0% 0%;
   transition: all ease-in-out 0.2s;
   font-size: 16px;
-  /* transition: opacity .2s, visibility .2s; */
 }
 
 .img__description:hover {
@@ -757,7 +747,6 @@ svg {
   -moz-box-shadow: 9px 9px 9px -7px rgba(0, 0, 0, 0.75);
   box-shadow: 9px 9px 9px -7px rgba(0, 0, 0, 0.75);
   transform: rotate(0deg);
-  /* transform: skewY(-3deg) skewX(3deg); */
   color: #000000;
   border-radius: 5px 0 0 0;
 }

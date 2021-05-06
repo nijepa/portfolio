@@ -1,9 +1,7 @@
 <template>
   <div class="homez">
     <div @wheel="handleStart">
-      <transition name="slide-fade" mode="out-in">
-        <Start @start-app="handleStart" />
-      </transition>
+      <Start @start-app="handleStart" />
     </div>
   </div>
 </template>
@@ -19,7 +17,7 @@ export default {
   },
 
   methods: {
-    async handleStart() {
+    handleStart() {
       this.$router.push("/aboutme");
     },
   },
