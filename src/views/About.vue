@@ -1,5 +1,6 @@
 <template>
   <div class="homez">
+    
     <Navigation @nav-click="handleNav" />
 
     <transition name="slide-fade" mode="out-in">

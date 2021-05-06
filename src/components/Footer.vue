@@ -1,5 +1,6 @@
 <template>
-  <div class="foo">
+<transition name="rise">
+  <div class="foo" v-show="apeared">
     <footer>
       <a
         class="linked__in"
@@ -49,6 +50,7 @@
       <p :v-model="atCopy" id="date" v-html="atCopy"></p>
     </div>
   </div>
+</transition>
 </template>
 
 <script>
@@ -58,7 +60,14 @@ export default {
   data() {
     return {
       atCopy: "",
-    };
+      apeared: false,
+    }
+  },
+
+  methods: {
+    onApeared() {
+      this.apeared = true;
+    }
   },
 
   mounted() {
@@ -69,6 +78,7 @@ export default {
     // document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
     // document.getElementById("date").innerHTML = "&copy; " + y + " Nikola"
     this.atCopy = "&copy; " + y + " Nikola";
+    this.onApeared()
   },
 };
 </script>

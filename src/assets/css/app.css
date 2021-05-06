@@ -145,8 +145,12 @@ h2:after {
     !important
   }
   .about {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
     height: unset;
+    overflow: hidden;
+  }
+  .about svg {
+    width: 30px !important;
   }
   body {
     overflow-x: hidden;

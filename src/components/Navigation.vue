@@ -1,5 +1,6 @@
 <template>
-  <nav class="menu">
+<transition name="fall">
+  <nav class="menu" v-on:load="onApeared" v-show="apeared">
     <button aria-expanded="false" aria-controls="menu-list" @click="toggleNav">
       <div class="textme__content">
         <span class="open">☰</span>
@@ -19,6 +20,7 @@
       </li>
     </ul>
   </nav>
+</transition>
 </template>
 
 <script>
@@ -39,6 +41,7 @@ export default {
         { id: "education", title: "Education" },
         { id: "contact", title: "Contact" },
       ],
+      apeared: false,
     };
   },
 
@@ -63,7 +66,14 @@ export default {
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
     },
+
+    onApeared() {
+      this.apeared = true;
+    }
   },
+  mounted() {
+    this.onApeared()
+  }
 };
 </script>
 

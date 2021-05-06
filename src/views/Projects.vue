@@ -492,7 +492,7 @@ export default {
   /* background: white; */
   background: linear-gradient(to right, rgba(255, 255, 255, 0.7), transparent);
   border-top-left-radius: 0.3em;
-  padding: 30px;
+  padding: 1em;
   display: grid;
   grid-template-columns: auto auto;
   align-items: center;
@@ -572,7 +572,7 @@ svg {
 
 .slides {
   display: grid;
-  grid-gap: 1rem;
+  grid-gap: .2rem;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
 }
@@ -683,6 +683,10 @@ svg {
   opacity: 1;
 }
 
+.img__wrap:active .middle {
+  opacity: 1;
+}
+
 .img__img {
   opacity: 1;
   display: block;
@@ -759,6 +763,11 @@ svg {
 }
 
 .img__wrap:hover .img__description {
+  visibility: visible;
+  opacity: 1;
+}
+
+.img__wrap:active .img__description {
   visibility: visible;
   opacity: 1;
 }
