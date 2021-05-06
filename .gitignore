@@ -1,8 +1,8 @@
 .DS_Store
 node_modules
 
-/src/images/old
-/src/images/org
+/src/assets/images/old
+/src/assets/images/org
 /src/assets/css/old
 /src/components/old
 <<<<<<< HEAD
