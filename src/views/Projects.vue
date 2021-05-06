@@ -185,7 +185,7 @@
         v-for="curProject in projectsData"
         :key="curProject.id"
       >
-        <transition name="rise">
+        <transition name="rise" mode="out-in">
           <img
             class="img__img"
             :src="getImgUrl(curProject.image)"
