@@ -157,7 +157,7 @@ export default {
                 <p>
                   Also I earned some verified certifications along the way,
                   <a
-                    href="https://www.freecodecamp.org/certification/fcce8b7e137-31ae-4bb5-915f-a76095b3ad2d/responsive-web-design"
+                    href="https://freecodecamp.org/certification/nijepa/responsive-web-design"
                     target="_blank"
                   >
                     Responsive Web Design
