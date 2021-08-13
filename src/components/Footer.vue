@@ -14,7 +14,7 @@
           </svg>
         </a>
 
-        <a href="https://github.com/nijepa" target="blank">
+        <a href="https://github.com/nijepa" target="blank" class="gh">
           <svg viewBox="0 0 128 128">
             <path
               d="M64 1.512c-23.493 0-42.545 19.047-42.545 42.545 0 18.797 12.19 34.745 29.095 40.37 2.126.394 2.907-.923 2.907-2.047 0-1.014-.04-4.366-.058-7.92-11.837 2.573-14.334-5.02-14.334-5.02-1.935-4.918-4.724-6.226-4.724-6.226-3.86-2.64.29-2.586.29-2.586 4.273.3 6.523 4.385 6.523 4.385 3.794 6.504 9.953 4.623 12.38 3.536.383-2.75 1.485-4.628 2.702-5.69-9.45-1.075-19.384-4.724-19.384-21.026 0-4.645 1.662-8.44 4.384-11.42-.442-1.072-1.898-5.4.412-11.26 0 0 3.572-1.142 11.7 4.363 3.395-.943 7.035-1.416 10.65-1.432 3.616.017 7.258.49 10.658 1.432 8.12-5.504 11.688-4.362 11.688-4.362 2.316 5.86.86 10.187.418 11.26 2.728 2.978 4.378 6.774 4.378 11.42 0 16.34-9.953 19.938-19.427 20.99 1.526 1.32 2.886 3.91 2.886 7.88 0 5.692-.048 10.273-.048 11.674 0 1.13.766 2.458 2.922 2.04 16.896-5.632 29.07-21.574 29.07-40.365C106.545 20.56 87.497 1.512 64 1.512z"
@@ -30,19 +30,24 @@
           </svg>
         </a>
 
-        <a
+        <!-- <a
           class="so"
           href="https://stackoverflow.com/users/11989189/nikola-pavicevic"
-          ><img
+          > --><img
             src="https://stackoverflow.com/users/flair/11989189.png?theme=dark"
-            width="165"
-            height="55"
+            width="208"
+            height="58"
+            class="so"
             alt="profile for Nikola Pavicevic at Stack Overflow, Q&amp;A for professional and enthusiast programmers"
             title="profile for Nikola Pavicevic at Stack Overflow, Q&amp;A for professional and enthusiast programmers"
-        /></a>
+         />  <!--</a> -->
 
         <a class="mail__me" href="mailto:nijepa@hotmail.com">
-          <svg viewBox="0 0 400 400">
+          <svg viewBox="0 50 400 300">
+            <polygon
+              id="XMLID_872_"
+              points="0,90 200,240 400,90 400,60 0,60 	"
+            />
             <polygon id="XMLID_869_" points="0,127.5 0,274.219 104.8,206.1 	" />
             <polygon
               id="XMLID_870_"
@@ -52,10 +57,7 @@
               id="XMLID_871_"
               points="200,277.5 130.357,225.268 0,310 0,340 400,340 400,310 269.643,225.268 	"
             />
-            <polygon
-              id="XMLID_872_"
-              points="0,90 200,240 400,90 400,60 0,60 	"
-            />
+            
           </svg>
         </a>
       </footer>
@@ -102,8 +104,9 @@ export default {
 
 footer {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  justify-self: stretch;
+  grid-template-columns: repeat(4, min-content);
+  justify-content: center;
+  gap: 1em;
   justify-items: center;
   align-items: center;
   margin-top: 50px;
@@ -112,35 +115,40 @@ footer {
   bottom: 0;
 }
 
-footer svg {
+footer a {
   cursor: pointer;
   width: 70px;
-  justify-self: center;
-  transition: all 0.7s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 @media (max-width: 682px) {
-  footer svg {
+  footer {
+    grid-template-columns: repeat(2, auto);
+  }
+  
+  footer a {
     width: 50px;
     height: 50px;
   }
-  footer img {
-    width: 140px;
-    height: 40px;
+  footer .so {
+    position: relative;
+    left: -2em;
+    top: -.2em;
+    transform: scale(0.7);
+  }
+  footer .so:hover {
+    transform: scale(0.65);
   }
 }
 
 .linked__in {
-  justify-self: right;
-}
+  justify-self: left; 
+} 
 
-footer svg:hover {
+
+footer a:hover {
   fill: var(--orange);
   transform: scale(0.9);
-}
-
-.mail__me {
-  justify-self: left;
 }
 
 #date {
@@ -148,12 +156,14 @@ footer svg:hover {
 }
 
 footer img {
+  transform: scale(0.9);
   border-radius: 1em;
-  transition: all 0.7s ease-in-out;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
 }
 
 footer img:hover {
   border: 3px solid var(--orange);
-  transform: scale(0.9);
+  transform: scale(0.8);
 }
 </style>
