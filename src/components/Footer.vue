@@ -158,6 +158,7 @@ footer a:hover {
 footer img {
   transform: scale(0.9);
   border-radius: 1em;
+  margin-bottom: .4em;
   cursor: pointer;
   transition: all 0.4s ease-in-out;
 }

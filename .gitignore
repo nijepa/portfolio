@@ -5,11 +5,8 @@ node_modules
 /src/assets/images/org
 /src/assets/css/old
 /src/components/old
-<<<<<<< HEAD
 #/dist
-=======
 
->>>>>>> withrouter
 
 # local env files
 .env
