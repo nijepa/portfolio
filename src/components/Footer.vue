@@ -30,17 +30,14 @@
           </svg>
         </a>
 
-        <!-- <a
+        <img
+          src="https://stackoverflow.com/users/flair/11989189.png?theme=dark"
+          width="208"
+          height="58"
           class="so"
-          href="https://stackoverflow.com/users/11989189/nikola-pavicevic"
-          > --><img
-            src="https://stackoverflow.com/users/flair/11989189.png?theme=dark"
-            width="208"
-            height="58"
-            class="so"
-            alt="profile for Nikola Pavicevic at Stack Overflow, Q&amp;A for professional and enthusiast programmers"
-            title="profile for Nikola Pavicevic at Stack Overflow, Q&amp;A for professional and enthusiast programmers"
-         />  <!--</a> -->
+          alt="profile for Nikola Pavicevic at Stack Overflow, Q&amp;A for professional and enthusiast programmers"
+          title="profile for Nikola Pavicevic at Stack Overflow, Q&amp;A for professional and enthusiast programmers"
+        />
 
         <a class="mail__me" href="mailto:nijepa@hotmail.com">
           <svg viewBox="0 50 400 300">
@@ -57,7 +54,6 @@
               id="XMLID_871_"
               points="200,277.5 130.357,225.268 0,310 0,340 400,340 400,310 269.643,225.268 	"
             />
-            
           </svg>
         </a>
       </footer>
@@ -125,7 +121,7 @@ footer a {
   footer {
     grid-template-columns: repeat(2, auto);
   }
-  
+
   footer a {
     width: 50px;
     height: 50px;
@@ -133,7 +129,7 @@ footer a {
   footer .so {
     position: relative;
     left: -2em;
-    top: -.2em;
+    top: -0.2em;
     transform: scale(0.7);
   }
   footer .so:hover {
@@ -142,9 +138,8 @@ footer a {
 }
 
 .linked__in {
-  justify-self: left; 
-} 
-
+  justify-self: left;
+}
 
 footer a:hover {
   fill: var(--orange);
@@ -158,7 +153,7 @@ footer a:hover {
 footer img {
   transform: scale(0.9);
   border-radius: 1em;
-  margin-bottom: .4em;
+  margin-bottom: 0.4em;
   cursor: pointer;
   transition: all 0.4s ease-in-out;
 }

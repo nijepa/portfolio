@@ -1,26 +1,30 @@
 <template>
-<transition name="fall">
-  <nav class="menu" v-on:load="onApeared" v-show="apeared">
-    <button aria-expanded="false" aria-controls="menu-list" @click="toggleNav">
-      <div class="textme__content">
-        <span class="open">☰</span>
-        <span class="close">×</span>
-        Menu
-      </div>
-    </button>
+  <transition name="fall">
+    <nav class="menu" v-on:load="onApeared" v-show="apeared">
+      <button
+        aria-expanded="false"
+        aria-controls="menu-list"
+        @click="toggleNav"
+      >
+        <div class="textme__content">
+          <span class="open">☰</span>
+          <span class="close">×</span>
+          Menu
+        </div>
+      </button>
 
-    <ul id="menu-list">
-      <li v-for="item in menuItems" :key="item.id">
-        <a
-          :id="item.id"
-          :class="item.id === activeLink ? 'active__link' : 'for__hover'"
-          @click="navClick"
-          >{{ item.title }}
-        </a>
-      </li>
-    </ul>
-  </nav>
-</transition>
+      <ul id="menu-list">
+        <li v-for="item in menuItems" :key="item.id">
+          <a
+            :id="item.id"
+            :class="item.id === activeLink ? 'active__link' : 'for__hover'"
+            @click="navClick"
+            >{{ item.title }}
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </transition>
 </template>
 
 <script>
@@ -51,7 +55,6 @@ export default {
       navButton1.setAttribute("aria-expanded", false);
       this.activeLink = event.target.id;
       //this.$emit('nav-click', event);
-      //console.log(event)
       this.$router.push("/" + event.target.id);
       this.scrollTop();
     },
@@ -69,11 +72,11 @@ export default {
 
     onApeared() {
       this.apeared = true;
-    }
+    },
   },
   mounted() {
-    this.onApeared()
-  }
+    this.onApeared();
+  },
 };
 </script>
 

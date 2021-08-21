@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <transition name="slide-fade" mode="out-in">
+    <transition name="scale-slide" mode="out-in">
     <router-view />
     </transition>
   </div>
@@ -212,4 +212,35 @@ export default {};
     transform: skew(0deg) translateX(0) translateY(0);
   }
 }
+
+/* Transition
+ -----------------------------*/
+
+  
+  .scale-slide-enter-active,
+.scale-slide-leave-active {
+  position: absolute;
+  transition: all 0.85s ease;
+}
+
+
+.scale-slide-enter-from {
+  left: -100%;
+}
+
+
+.scale-slide-enter-to {
+  left: 0%;
+}
+
+
+.scale-slide-leave-from {
+  transform: scale(1);
+}
+
+
+.scale-slide-leave-to {
+  transform: scale(0.8);
+}
+
 </style>
