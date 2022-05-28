@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <transition name="scale-slide" mode="out-in">
+    <transition name="slide-fade" mode="out-in">
     <router-view />
     </transition>
   </div>
@@ -44,21 +44,39 @@ export default {};
   }
 }
 
-.slide-fade-enter-active {
-  transition: all 0.9s ease;
-}
-.slide-fade-leave-active {
+/* .slide-fade-enter-active {
+  transition: all 0.4s ease;
+} */
+/* .slide-fade-leave-active {
   transition: ease 0.9s all;
   transform: rotateY(-90deg);
   //transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-}
-.slide-fade-enter, .slide-fade-leave-to
-  /* .slide-fade-leave-active below version 2.1.8 */ {
+} */
+/* .slide-fade-enter, .slide-fade-leave-to
+  /* .slide-fade-leave-active below version 2.1.8 { */
   //transform: translateX(10px);
-  transform: rotateY(90deg);
+  /*  transform: rotateY(90deg);*/
   //filter: brightness(.7);
+  /* opacity: 0;
+} */
+.slide-fade-enter-from {
   opacity: 0;
+  transform: translateY(200px);
 }
+.slide-fade-enter-active {
+  transition: all 1s ease-out;
+  
+}
+.slide-fade-leave-to {
+  opacity: 0;
+  transform: translateY(-200px);
+}
+.slide-fade-leave-active {
+  transition: all 1s ease-in;
+  // transform: translateY(200px);
+} 
+
+
 
 .fader-enter-active {
   transition: all 5s ease;
